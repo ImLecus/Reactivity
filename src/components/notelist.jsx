@@ -7,6 +7,8 @@ export default function NoteList(){
             <Note text="esto es una nota" emoScore="mid"/>
             <Note text="esto es una nota" emoScore="bad"/>
             <Note text="esto es una nota" emoScore="awful"/>
+            <Note text="esto es una nota" emoScore="mid"/>
+            <Note text="esto es una nota" emoScore="bad"/>
             <div className="journalFooter">
                 <button><img src="./plus.svg"/><p>Añadir nueva entrada</p></button>
                 <p>¡Vuelve mañana para escribir una nueva entrada en el diario!</p>

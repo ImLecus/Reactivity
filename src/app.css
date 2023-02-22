@@ -9,11 +9,15 @@
     --emo-good: #85c448;
     --emo-excellent: #439d40;
 }
+body{
+    margin: 0;
+}
 .note{
     border: 1px solid var(--medium-border-color);
     border-radius: 10px;
     box-shadow: 0 10px 10px #d9d5d360;
     margin: 10px 0;
+
 }
 .noteTitle{
     display: flex;
@@ -76,8 +80,96 @@
     font-size: 120%;
 }
 #noteList{
-    padding: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 50px;
 }
 .fullContent{
     transform: rotateX(180deg);
+}
+header{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid var(--medium-border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+}
+header img{
+    width: 120%;
+}
+header button{
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+}
+button{
+    border: none;
+    background-color: transparent;
+}
+aside{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    
+    z-index: 50;
+    
+    
+    transition: 0.2s linear;
+    left: -105vw;
+}
+aside .content{
+    background-color: white;
+    width: 60vw;
+    border-right: 1px solid var(--medium-border-color);
+    box-shadow: 2px 0 5px #0000001a;
+}
+#space{
+    width: 40vw;
+    height: 100vh;
+}
+.isOpen\:true{
+    left: 0 !important;
+}
+#userProfile{
+    border-bottom: 1px solid var(--medium-border-color);
+    height: 60px;
+    display: flex;
+    padding: 20px;
+}
+#userProfile img{
+    margin: 0 15px;
+}
+h3,a{
+    margin: 0;
+}
+.buttons{
+    border-bottom: 1px solid var(--medium-border-color);
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+}
+.buttons li{
+    
+    
+    border-bottom: 1px solid var(--light-border-color);
+    padding: 15px 10px;
+}
+.buttons li button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buttons li:last-child{
+    border: none;
+}
+.buttons li img{
+    height: 25px;
 }

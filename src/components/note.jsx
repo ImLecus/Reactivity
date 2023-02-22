@@ -1,8 +1,8 @@
 import { useState } from "react";
 export default function Note(props){
     let [text,setText] = useState(props.text)
-    let[full,setFull] = useState("false")
-    let[day,month] = (props.date? props.date: "01/0").split("/")
+    let [full,setFull] = useState("false")
+    let [day,month] = (props.date? props.date: "01/0").split("/")
     let months = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiempre","octubre","noviembre","diciembre"]
     return(
         <div className="note">
