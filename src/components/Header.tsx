@@ -1,12 +1,21 @@
-import React from "react"
-import { View, Text} from "react-native"
-export default function Header(){
-    return(
+import { View, Text, TouchableWithoutFeedback, Image} from "react-native"
+export default function Header(props:any){
+    return( 
+
         <View style={{
             backgroundColor:"#02c39a",
-            padding: 20
+            alignItems: "center",
+            height: 70,
+            flexDirection: "row",
+            padding: 20,
+            paddingTop: 30,
+            borderBottomWidth: 1,
+            borderBottomColor: "#000000"
         }}>
-            <Text style={{color:"white", paddingLeft: 20 }}>Diario</Text>
+        <TouchableWithoutFeedback>
+            <Image source={require("../assets/arrow_left.png")} style={{width: 25, height: 25}}></Image>
+        </TouchableWithoutFeedback>
+            <Text style={{color:"white", paddingLeft: 20, fontWeight: "bold"}}>{props.name}</Text>
         </View> 
     )
 }
