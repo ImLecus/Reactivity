@@ -1,8 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import Header from './src/components/Header';
 
+import Footer from './src/components/Footer';
+import Main from './src/components/Main';
 export default function App() {
   return (
-    <Header name="Diario"/>
+    <>
+      <Main></Main>
+      <Footer />
+    </>
+    
   );
 }
