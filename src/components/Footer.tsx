@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
         borderTopColor: "gray"
     },
     image: {
-        width: 40,
-        height: 40,
+        width: 35,
+        height: 35,
         opacity: 0.6
     }
 
