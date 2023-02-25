@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Paragraph } from "./Typography"
-
+import * as Theme from "../data/theme"
 const styles = StyleSheet.create({
     widget : {
         width: 250,
@@ -39,26 +39,14 @@ export default function Widget(props:any){
     let color = props.color ? props.color : "white"
 
 
-    const colors:any = {
-        white:"#fff",
-        green:"#06d6a0",
-        purple:"#9381ff"
-    }
-    const lightColors:any = {
-        green: "#c7f9cc",
-        purple: "#b8b8ff"
-    }
-    const icons:any = {
-        walk: require("../assets/walk.png"),
-        write: require("../assets/book_fill.png")
-    }
+    
 
     return(
-        <View style={[styles.widget,{backgroundColor: colors[color]}]}>
+        <View style={[styles.widget,{backgroundColor: Theme.colors[color]}]}>
 
             <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-                <Paragraph text={props.text} color="white" />
-                <Image source={icons[props.type]} style={styles.image}></Image>
+                <Paragraph text={props.text} color="white"/>
+                <Image source={Theme.icons[props.type]} style={styles.image}></Image>
             </View>
             
 
@@ -66,7 +54,7 @@ export default function Widget(props:any){
 
                 <View style={[styles.progressBar,
                     {
-                        backgroundColor: lightColors[color],
+                        backgroundColor: Theme.lightColors[color],
                         width: (100 * progress/max  + "%")
                     }
                 ]}/>

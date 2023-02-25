@@ -1,17 +1,21 @@
 import { View, StyleSheet, TouchableHighlight, Image } from "react-native";
 
 const Footer = () => (
-    <View style={styles.container}>
-        <TouchableHighlight>
-            <Image source={require("../assets/home.png")} style={styles.image}></Image>
-        </TouchableHighlight>
-        <TouchableHighlight>
-            <Image source={require("../assets/stats.png")} style={styles.image}></Image>
-        </TouchableHighlight>
-        <TouchableHighlight>
-            <Image source={require("../assets/profile.png")} style={styles.image}></Image>
-        </TouchableHighlight>
-    </View>
+    <>
+        <View style={{position: "absolute", top: 0, height:30, width:"100%", backgroundColor: "white", elevation: 20,}} />
+        <View style={styles.container}>
+            <TouchableHighlight>
+                <Image source={require("../assets/home.png")} style={styles.image}></Image>
+            </TouchableHighlight>
+            <TouchableHighlight>
+                <Image source={require("../assets/stats.png")} style={styles.image}></Image>
+            </TouchableHighlight>
+            <TouchableHighlight>
+                <Image source={require("../assets/profile.png")} style={styles.image}></Image>
+            </TouchableHighlight>
+        </View>
+    </>
+    
 )
 
 const styles = StyleSheet.create({
@@ -24,7 +28,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderTopWidth: 1,
         borderTopColor: "gray",
-        elevation: -1
+        elevation: 1,
+        backgroundColor: "white"
     },
     image: {
         width: 35,
