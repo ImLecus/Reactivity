@@ -25,6 +25,7 @@ const colors:any = {
         green:"#06d6a0",
         purple:"#9381ff"
     }
+
 }
 
 var colorTheme = "light"
