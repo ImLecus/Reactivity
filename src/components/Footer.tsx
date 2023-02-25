@@ -23,12 +23,18 @@ const styles = StyleSheet.create({
         flexDirection : "row",
         padding: 10,
         borderTopWidth: 1,
-        borderTopColor: "gray"
+        borderTopColor: "gray",
+        elevation: -1
     },
     image: {
         width: 35,
         height: 35,
         opacity: 0.6
+    },
+    active:{
+        width: 35,
+        height: 35,
+        opacity: 0.8
     }
 
 })

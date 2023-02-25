@@ -1,49 +1,33 @@
-import { View, Text, StyleSheet } from "react-native";
-import { useFonts } from "expo-font";
-
-
+import { View, Text, StyleSheet,ScrollView } from "react-native";
+import * as User from "../data/user/user";
+import * as Font from "expo-font";
+import Widget from "./Widget";
+import {Title, Whitespace, Paragraph, Subtitle} from "./Typography"
 
 export default function Main(){
-    const [fontsLoaded] = useFonts({
-        'Montserrat': require('../assets/fonts/Montserrat.ttf'),
-        'SourceSansPro' : require('../assets/fonts/SourceSansPro.ttf')
-    });
+
+    const fetchFonts = async () => {
+        await Font.loadAsync({
+            'Montserrat': require('../assets/fonts/Montserrat.ttf'),
+            'SourceSansPro' : require('../assets/fonts/SourceSansPro.ttf')
+        })
+    }
+        
 
     return(
         <View style={{padding:30}}>
             <Whitespace/>
-            <Title text="Bievenido de nuevo, Marcos"/>
+            <Title text={"Bievenido de nuevo, "+ User.username}/>
             <Paragraph text="Un día menos para cumplir tus objetivos."/>
             <Whitespace/>
             <Subtitle text="Recomendado para hoy"/>
+            <ScrollView horizontal style={{flexDirection: "row", marginTop: 25, paddingBottom: 10}}>
+                <Widget color="purple" text="Camina 2km" max="2.00" progress="1.4" type="walk"/>
+                <Widget color="green" text="Escribe sobre tu día" progress="1" type="write"/>
+            </ScrollView>
+            
         </View>
     )
     
 }
 
-const Title = (props:any) => (<Text style={styles.title}>{props.text}</Text>)
-const Subtitle = (props:any) => (<Text style={styles.subtitle}>{props.text}</Text>)
-const Paragraph = (props:any) => (<Text style={styles.paragraph}>{props.text}</Text>)
-const Whitespace = () => (<View style={{height: 50, width: 10}}></View>)
-const styles = StyleSheet.create({
-    title : {
-        fontSize: 40,
-        fontFamily: "Montserrat",
-        fontWeight: "bold",
-        margin: 5
-    },
-    paragraph : {
-        fontSize: 18,
-        fontFamily: "SourceSansPro",
-        fontWeight: "normal",
-        margin: 5,
-        opacity: 0.7
-    },
-    subtitle : {
-        fontSize: 24,
-        fontFamily: "Montserrat",
-        fontWeight: "bold",
-        margin: 5,
-        opacity: 0.7
-    }
-})
