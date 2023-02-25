@@ -1,8 +1,8 @@
 import { View, StyleSheet, TouchableHighlight, Image } from "react-native";
-
+import * as Theme from "../data/theme"
 const Footer = () => (
     <>
-        <View style={{position: "absolute", top: 0, height:30, width:"100%", backgroundColor: "white", elevation: 20,}} />
+        <View style={{position: "absolute", top: 0, height:30, width:"100%", backgroundColor: Theme.colors[Theme.colorTheme].bg, elevation: 20,}} />
         <View style={styles.container}>
             <TouchableHighlight>
                 <Image source={require("../assets/home.png")} style={styles.image}></Image>
@@ -29,12 +29,13 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderTopColor: "gray",
         elevation: 1,
-        backgroundColor: "white"
+        backgroundColor: Theme.colors[Theme.colorTheme].bg
     },
     image: {
         width: 35,
         height: 35,
-        opacity: 0.6
+        opacity: 0.6,
+        tintColor: Theme.colorTheme == "light"? Theme.colors["dark"].bg :Theme.colors["light"].bg
     },
     active:{
         width: 35,

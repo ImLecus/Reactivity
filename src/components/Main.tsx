@@ -4,6 +4,7 @@ import * as Font from "expo-font";
 import Widget from "./Widget";
 import ObjectiveBall from "./ObjectiveBall";
 import {Title, Whitespace, Paragraph, Subtitle} from "./Typography"
+import * as Theme from "../data/theme"
 
 export default function Main(){
 
@@ -16,7 +17,7 @@ export default function Main(){
         
 
     return(
-        <ScrollView style={{padding:30}}>
+        <ScrollView style={{padding:30, backgroundColor: Theme.colors[Theme.colorTheme].bg}}>
             <Whitespace/>
             <Title text={"Bievenido de nuevo, "+ User.username}/>
             <Paragraph text="Un día menos para cumplir tus objetivos."/>

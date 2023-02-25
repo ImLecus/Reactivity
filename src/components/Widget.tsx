@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     image : {
         width: 30,
         height: 30,
-        tintColor: "#fff"
+        tintColor: Theme.colors[Theme.colorTheme].bg
     }
 })
 
@@ -42,7 +42,7 @@ export default function Widget(props:any){
     
 
     return(
-        <View style={[styles.widget,{backgroundColor: Theme.colors[color]}]}>
+        <View style={[styles.widget,{backgroundColor: Theme.colors[Theme.colorTheme][color]}]}>
 
             <View style={{flexDirection: "row", justifyContent: "space-between"}}>
                 <Paragraph text={props.text} color="white"/>
