@@ -8,7 +8,7 @@ const Footer = (props:any) => {
         <View style={{position: "absolute", top: 0, height:70, width:"100%", backgroundColor: Theme.colors[Theme.colorTheme].main, elevation: 30,}}>
             <TouchableWithoutFeedback>
                 <View style={{alignItems: "center", flexDirection: "row", height: "100%"}}>
-                    <Image source={require("../assets/img/menu.png")} style={[styles.image, {tintColor : Theme.colors[Theme.colorTheme].bg, marginLeft: 20,top: 10}]}></Image>
+                    <Image source={require("../assets/img/menu.png")} style={{width: 30, height: 30,tintColor : Theme.colors[Theme.colorTheme].bg, marginLeft: 20,top: 10}}></Image>
                     <View style={{position: "absolute", left:75, top: 25}}>
                         <Paragraph text="Domingo, 26 de febrero" color={Theme.colors[Theme.colorTheme].bg} opacity={1}/>
                     </View>

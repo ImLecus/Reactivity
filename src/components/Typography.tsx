@@ -5,7 +5,7 @@ export const Title = (props:any) => (
     <Text style={{
         color: (props.color ? props.color : Theme.colors[Theme.colorTheme].text ),
         fontSize: 40 * (props.size? props.size : 1),
-        fontFamily: "Montserrat",
+        fontFamily: "JosefinSans",
         fontWeight: "bold",
         margin: 5
         }}>
@@ -17,7 +17,7 @@ export const Subtitle = (props:any) => (
     <Text style={{
         color: (props.color ? props.color : Theme.colors[Theme.colorTheme].text),
         fontSize: 24,
-        fontFamily: "Montserrat",
+        fontFamily: "JosefinSans",
         fontWeight: "bold",
         margin: 5,
         opacity: 0.7
@@ -28,7 +28,7 @@ export const Paragraph = (props:any) => (
     <Text style={{
         color: props.color ? props.color : Theme.colors[Theme.colorTheme].text,
         fontSize: 18,
-        fontFamily: "SourceSansPro",
+        fontFamily: "Inter",
         fontWeight: "normal",
         margin: 5,
         opacity: props.opacity? props.opacity : 0.7
