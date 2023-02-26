@@ -1,0 +1,53 @@
+{
+    "user":{
+        "username": "Marcos",
+        "level" : 1,
+        "exp": 0,
+        "photo": "",
+        "created":"1/1/2023"
+    },
+    "journal":{
+        "entries": [
+            {
+                "day":"1/1/2023",
+                "emoScore": 4,
+                "text": "hola mundo esta es mi primera entrada"
+            },
+            {
+                "day":"2/1/2023",
+                "emoScore": 5,
+                "text": "vamos a hacer un caché de usuario para posteriormente llevarlo al backend"
+            },
+            {
+                "day":"3/1/2023",
+                "emoScore": 3,
+                "text" : "el caché del usuario y los datos del server se sincronizarán al conectarse"
+            }
+        ]
+    },
+    "calendar":{
+        "entries" : [
+            {
+                "day":"2/1/2023",
+                "name":"Gimnasio",
+                "begin":"00:00",
+                "end":"23:59",
+                "type":"fit",
+                "notification":true,
+                "delay": "1:30"
+            },
+            {
+                "day":"6/1/2023",
+                "name":"Examen",
+                "begin":"9:00",
+                "end":"10:00",
+                "type":"study",
+                "notification":false,
+                "delay": "0"
+            }
+        ]
+    }
+    
+}
+
+

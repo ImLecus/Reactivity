@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet,ScrollView, TouchableWithoutFeedback, Image } from "react-native";
-import User from "../data/user.json";
+import Cache from "../data/cache.json";
 
 import Widget from "./Widget";
 import ObjectiveBall from "./ObjectiveBall";
@@ -12,7 +12,7 @@ export default function Main(props:any){
     return(
         <ScrollView style={{padding:30, backgroundColor: Theme.colors[Theme.colorTheme].bg, display: (props.state == 0? "flex":"none")}}>
             <Whitespace/>
-            <Title text={"Bievenido de nuevo, "+ User.username}/>
+            <Title text={"Bievenido de nuevo, "+ Cache.user.username}/>
             <Paragraph text="Un día menos para cumplir tus objetivos."/>
             <Whitespace/>
             <Subtitle text="Recomendado para hoy"/>
