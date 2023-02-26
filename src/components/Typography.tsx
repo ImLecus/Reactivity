@@ -30,7 +30,8 @@ export const Paragraph = (props:any) => (
         fontSize: 18,
         fontFamily: "SourceSansPro",
         fontWeight: "normal",
-        margin: 5
+        margin: 5,
+        opacity: props.opacity? props.opacity : 0.7
         }}>
         {props.text}
     </Text>)

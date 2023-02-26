@@ -45,7 +45,7 @@ export default function Widget(props:any){
         <View style={[styles.widget,{backgroundColor: Theme.colors[Theme.colorTheme][color]}]}>
 
             <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-                <Paragraph text={props.text} color="white" />
+                <Paragraph text={props.text} color="white" opacity={1}/>
                 <Image source={Theme.icons[props.type]} style={styles.image}></Image>
             </View>
             
