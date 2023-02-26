@@ -6,7 +6,7 @@ import ObjectiveBall from "./ObjectiveBall";
 import {Title, Whitespace, Paragraph, Subtitle} from "./Typography"
 import * as Theme from "../data/theme"
 
-export default function Main(){
+export default function Main(props:any){
 
     const fetchFonts = async () => {
         await Font.loadAsync({
@@ -17,7 +17,7 @@ export default function Main(){
         
 
     return(
-        <ScrollView style={{padding:30, backgroundColor: Theme.colors[Theme.colorTheme].bg}}>
+        <ScrollView style={{padding:30, backgroundColor: Theme.colors[Theme.colorTheme].bg, display: (props.state == 0? "flex":"none")}}>
             <Whitespace/>
             <Title text={"Bievenido de nuevo, "+ User.username}/>
             <Paragraph text="Un día menos para cumplir tus objetivos."/>

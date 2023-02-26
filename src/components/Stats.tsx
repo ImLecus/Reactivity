@@ -4,7 +4,7 @@ import * as Font from "expo-font";
 import ObjectiveBall from "./ObjectiveBall";
 import {Title, Whitespace, Paragraph, Subtitle} from "./Typography"
 import StatButton from "./StatButton";
-export default function Stats(){
+export default function Stats(props:any){
     const fetchFonts = async () => {
         await Font.loadAsync({
             'Montserrat': require('../assets/fonts/Montserrat.ttf'),
@@ -12,7 +12,7 @@ export default function Stats(){
         })
     }
     return(
-        <ScrollView style={{padding:30}}>
+        <ScrollView style={{padding:30, width: 50, height: 200, backgroundColor: "red",display: (props.state == 2 ? "flex":"none")}}>
             <Whitespace/>
             <Title text="Estadísticas" />
             <Paragraph text="Comprueba tu progreso"/>
