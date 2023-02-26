@@ -7,7 +7,8 @@ export const Title = (props:any) => (
         fontSize: 40 * (props.size? props.size : 1),
         fontFamily: "JosefinSans",
         fontWeight: "bold",
-        margin: 5
+        margin: 5,
+        opacity: 0.8
         }}>
         {props.text}
     </Text>

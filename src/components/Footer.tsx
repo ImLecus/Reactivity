@@ -2,7 +2,12 @@ import { View, StyleSheet, TouchableWithoutFeedback, Image,Alert } from "react-n
 import * as Theme from "../data/theme"
 import { Paragraph } from "./Typography";
 const Footer = (props:any) => {
+    var days = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"]
+    var months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+    var date = new Date()
+    var dateText = days[date.getDay()] + ", " + date.getDate() + " de " + months[date.getMonth()]
 
+    var titles = [dateText, "Perfil"]
     return(
     <>
         <View style={{position: "absolute", top: 0, height:70, width:"100%", backgroundColor: Theme.colors[Theme.colorTheme].main, elevation: 30,}}>
@@ -10,7 +15,7 @@ const Footer = (props:any) => {
                 <View style={{alignItems: "center", flexDirection: "row", height: "100%"}}>
                     <Image source={require("../assets/img/menu.png")} style={{width: 30, height: 30,tintColor : Theme.colors[Theme.colorTheme].bg, marginLeft: 20,top: 10}}></Image>
                     <View style={{position: "absolute", left:75, top: 25}}>
-                        <Paragraph text="Domingo, 26 de febrero" color={Theme.colors[Theme.colorTheme].bg} opacity={1}/>
+                        <Paragraph text={titles[props.state]} color={Theme.colors[Theme.colorTheme].bg} opacity={1}/>
                     </View>
                 </View>
             </TouchableWithoutFeedback>
