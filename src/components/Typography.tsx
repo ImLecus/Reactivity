@@ -1,4 +1,4 @@
-import {Text, StyleSheet, View} from "react-native"
+import {Text, View} from "react-native"
 import * as Theme from "../data/theme"
 
 export const Title = (props:any) => (

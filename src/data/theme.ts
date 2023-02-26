@@ -1,14 +1,14 @@
-const lightColors:any = {
+export var lightColors = {
     red: "#ff8296",
     green: "#c7f9cc",
     purple: "#b8b8ff"
 }
-const icons:any = {
-    walk: require("../assets/img/walk.png"),
+export var icons = {
+    walk:  require("../assets/img/walk.png"),
     write: require("../assets/img/book_fill.png"),
     diary: require("../assets/img/diary.png")
 }
-const colors:any = {
+export var colors = {
     light : {
         bg : "#fff",
         complementary: "#222",
@@ -25,9 +25,5 @@ const colors:any = {
         green:"#06d6a0",
         purple:"#9381ff"
     }
-
 }
-
-var colorTheme = "light"
-
-export {colors, lightColors, icons, colorTheme}
+export var colorTheme = "light"

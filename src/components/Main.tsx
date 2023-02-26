@@ -1,19 +1,12 @@
 import { View, Text, StyleSheet,ScrollView, TouchableWithoutFeedback, Image } from "react-native";
-import * as User from "../data/user/user";
-import * as Font from "expo-font";
+import User from "../data/user.json";
+
 import Widget from "./Widget";
 import ObjectiveBall from "./ObjectiveBall";
 import {Title, Whitespace, Paragraph, Subtitle} from "./Typography"
 import * as Theme from "../data/theme"
 
 export default function Main(props:any){
-
-    const fetchFonts = async () => {
-        await Font.loadAsync({
-            'Montserrat': require('../assets/fonts/Montserrat.ttf'),
-            'SourceSansPro' : require('../assets/fonts/SourceSansPro.ttf')
-        })
-    }
         
 
     return(

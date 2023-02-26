@@ -5,9 +5,16 @@ import Stats from './src/components/Stats';
 import Profile from './src/components/Profile';
 import React from 'react';
 import { useState } from 'react';
+import * as Font from "expo-font";
 
 export default function App() {
 
+  const fetchFonts = async () => {
+    await Font.loadAsync({
+        'Montserrat': require('./src/assets/fonts/Montserrat.ttf'),
+        'SourceSansPro' : require('./src/assets/fonts/SourceSansPro.ttf')
+    })
+}
   
   const [active,setActive] = useState(0)
 

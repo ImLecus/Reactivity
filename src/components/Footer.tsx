@@ -1,5 +1,4 @@
 import { View, StyleSheet, TouchableWithoutFeedback, Image,Alert } from "react-native"
-import { useState } from "react"
 import * as Theme from "../data/theme"
 const Footer = (props:any) => {
 

@@ -3,7 +3,6 @@ import {Title, Whitespace, Paragraph, Subtitle} from "./Typography"
 import * as Theme from "../data/theme"
 const styles = StyleSheet.create({
     button : {
-        backgroundColor : "red",
         width: "100%",
         height: 150,
         borderRadius: 10,
@@ -15,11 +14,12 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
         position: "absolute",
         bottom: 0,
-        right: 10
+        right: 10,
+        elevation: 10
     }
 })
 
-export default function StatButton(props:any){
+export default function StatButton(props){
     return(
         <View style={[styles.button,{backgroundColor: Theme.colors[props.color]}]}>
             <Image source={Theme.icons.write} style={[styles.bg,{tintColor: Theme.lightColors[props.color]}]}></Image>
