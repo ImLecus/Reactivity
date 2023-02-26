@@ -1,6 +1,6 @@
 export var lightColors = {
     red: "#ff8296",
-    green: "#c7f9cc",
+    green: "#d9ed92",
     purple: "#b8b8ff"
 }
 export var icons = {
@@ -17,17 +17,18 @@ export var colors = {
         complementary: "#222",
         red: "#ef233c",
         orange: "#fb8500",
-        green:"#06d6a0",
+        green:"#76c893",
         purple:"#9381ff",
         gray: "#ccc",
-        text: "#000"
+        text: "#000",
+        main: "#02c39a"
     },
     dark : {
         bg: "#222",
         complementary: "#fff",
         text: "#fff",
         red: "#ef233c",
-        green:"#06d6a0",
+        green:"#76c893",
         purple:"#9381ff"
     },
     transparent: "#00000000"

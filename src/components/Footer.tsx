@@ -1,22 +1,35 @@
 import { View, StyleSheet, TouchableWithoutFeedback, Image,Alert } from "react-native"
 import * as Theme from "../data/theme"
+import { Paragraph } from "./Typography";
 const Footer = (props:any) => {
 
     return(
     <>
-        <View style={{position: "absolute", top: 0, height:30, width:"100%", backgroundColor: Theme.colors[Theme.colorTheme].bg, elevation: 20,}} />
+        <View style={{position: "absolute", top: 0, height:70, width:"100%", backgroundColor: Theme.colors[Theme.colorTheme].main, elevation: 30,}}>
+            <TouchableWithoutFeedback>
+                <View style={{alignItems: "center", flexDirection: "row", height: "100%"}}>
+                    <Image source={require("../assets/img/menu.png")} style={[styles.image, {tintColor : Theme.colors[Theme.colorTheme].bg, marginLeft: 20,top: 10}]}></Image>
+                    <View style={{position: "absolute", left:75, top: 25}}>
+                        <Paragraph text="Domingo, 26 de febrero" color={Theme.colors[Theme.colorTheme].bg} opacity={1}/>
+                    </View>
+                </View>
+            </TouchableWithoutFeedback>
+        </View>
         <View style={styles.container}>
-            <TouchableWithoutFeedback onPress={() => {props.function(0)}}>
-                <Image source={props.state == 0 ?require("../assets/img/home_fill.png") :require("../assets/img/home.png")} style={styles.image}></Image>
+            <TouchableWithoutFeedback onPress={() => {props.function(0); }}>
+                <View style={{padding:5, backgroundColor: (props.state == 0? "#00000010" : Theme.colors.transparent), borderRadius: 15}}>
+                    <Image source={require("../assets/img/home.png")} style={[styles.image, {tintColor : (props.state == 0? Theme.colors[Theme.colorTheme].main : Theme.colors[Theme.colorTheme].complementary) }]}></Image>
+                </View>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback>
+                <View style={{padding:5, backgroundColor: Theme.colors[Theme.colorTheme].main,  borderRadius: 50}}>
+                    <Image source={require("../assets/img/add.png")} style={styles.add}></Image>
+                </View>
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback onPress={() => {props.function(1)}}>
-                <Image source={props.state == 1 ?require("../assets/img/applications_fill.png") :require("../assets/img/applications.png")} style={styles.image}></Image>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => {props.function(2)}}>
-                <Image source={props.state == 2 ?require("../assets/img/stats_fill.png") :require("../assets/img/stats.png")} style={styles.image}></Image>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => {props.function(3)}}>
-                <Image source={props.state == 3 ?require("../assets/img/profile_fill.png") :require("../assets/img/profile.png")} style={styles.image}></Image>
+            <View style={{padding:5, backgroundColor: (props.state == 1? "#00000010" : Theme.colors.transparent), borderRadius: 15}}>
+                    <Image source={require("../assets/img/profile.png")} style={[styles.image, { tintColor : (props.state == 1? Theme.colors[Theme.colorTheme].main : Theme.colors[Theme.colorTheme].complementary) }]}></Image>
+                </View>
             </TouchableWithoutFeedback>
         </View>
     </>
@@ -39,8 +52,11 @@ const styles = StyleSheet.create({
     image: {
         width: 35,
         height: 35,
-        opacity: 0.6,
-        tintColor: Theme.colors[Theme.colorTheme].complementary
+    },
+    add : {
+        width: 35,
+        height: 35,
+        tintColor : "white" , 
     },
     active:{
         width: 35,

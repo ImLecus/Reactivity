@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 10,
         margin: 5,
-        elevation: 10,
+        elevation: 12,
         marginBottom: 20,
         marginLeft: 10
     },
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#00000044",
         borderRadius: 5,
         margin: 5,
-        elevation: 31
+        elevation: 7
     },
     progressBar : {
         height: 15,

@@ -2,12 +2,17 @@ import { View, Text, Image } from "react-native"
 import Cache from "../data/cache.json"
 import { Whitespace, Title, Paragraph, Subtitle } from "./Typography"
 import { ListElement } from "./ListItem"
+import * as Theme from "../data/theme"
 export default function Profile(props:any){
     return(
-        <View  style={{display: (props.state == 3 ? "flex":"none")}}>
-            <Whitespace />
+        <View  style={{display: (props.state == 1 ? "flex":"none")}}>
+            <Whitespace /><Whitespace />
             <View style={{flexDirection: "row", justifyContent: "space-evenly", padding: 30}}>
-                <Image source={require("../assets/img/profile_def.png")} style={{width: 100, height: 100, borderColor: "black", borderWidth: 2, borderRadius: 50}}></Image>
+                <View>
+                    <Image source={require("../assets/img/profile_def.png")} style={{width: 100, height: 100, borderColor: Theme.colors[Theme.colorTheme].main, borderWidth: 5, borderRadius: 50}}></Image>
+                    <View style={{width: 60, height: 30, backgroundColor: Theme.colors[Theme.colorTheme].main, position:"absolute",bottom:0, left: 20, borderRadius: 5}} />
+                </View>
+                
                 <View>
                     <Title text={Cache.user.username}/>
                     <Subtitle text={"Nivel " + Cache.user.level}/>

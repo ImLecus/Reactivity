@@ -1,7 +1,5 @@
 import Footer from './src/components/Footer';
 import Main from './src/components/Main';
-import Categories from './src/components/Categories';
-import Stats from './src/components/Stats';
 import Profile from './src/components/Profile';
 import React from 'react';
 import { useState } from 'react';
@@ -21,10 +19,8 @@ export default function App() {
   return (
     <>
       <Main state={active}/>
-      <Stats state={active} />
-      <Categories state={active} />
       <Profile state={active} />
-      <Footer state ={active} function={setActive}/>
+      <Footer state={active} function={setActive}/>
     </>
     
   );
