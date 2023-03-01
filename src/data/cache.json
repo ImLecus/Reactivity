@@ -1,8 +1,6 @@
 {
     "user":{
         "username": "Marcos",
-        "level" : 1,
-        "exp": 0,
         "photo": "",
         "created":"1/1/2023"
     },

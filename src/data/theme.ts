@@ -21,15 +21,18 @@ export var colors = {
         purple:"#9381ff",
         gray: "#ccc",
         text: "#000",
-        main: "#02c39a"
+        main: "#00b4d8"
     },
     dark : {
         bg: "#222",
         complementary: "#fff",
-        text: "#fff",
         red: "#ef233c",
         green:"#76c893",
-        purple:"#9381ff"
+        orange: "#fb8500",
+        purple:"#9381ff",
+        gray: "#ccc",
+        text: "#fff",
+        main: "#02c39a"
     },
     transparent: "#00000000"
 }
