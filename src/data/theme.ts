@@ -13,26 +13,26 @@ export var icons = {
 }
 export var colors = {
     light : {
-        bg : "#fff",
+        bg : "#edf2f4",
         complementary: "#222",
         red: "#ef233c",
         orange: "#fb8500",
         green:"#76c893",
         purple:"#9381ff",
         gray: "#ccc",
-        text: "#000",
-        main: "#00b4d8"
+        text: "#444",
+        main: "#1db233"
     },
     dark : {
-        bg: "#222",
-        complementary: "#fff",
+        bg: "#333",
+        complementary: "#edf2f4",
         red: "#ef233c",
         green:"#76c893",
         orange: "#fb8500",
         purple:"#9381ff",
         gray: "#ccc",
-        text: "#fff",
-        main: "#02c39a"
+        text: "#edf2f4",
+        main: "#1db233"
     },
     transparent: "#00000000"
 }

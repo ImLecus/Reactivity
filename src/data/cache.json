@@ -1,7 +1,7 @@
 {
     "user":{
         "username": "Marcos",
-        "photo": "",
+        "photo": "../../assets/img/profile_def.png",
         "created":"1/1/2023"
     },
     "journal":{
