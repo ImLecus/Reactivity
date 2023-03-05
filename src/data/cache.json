@@ -2,7 +2,8 @@
     "user":{
         "username": "Marcos",
         "photo": "../../assets/img/profile_def.png",
-        "created":"1/1/2023"
+        "created":"1/1/2023",
+        "mail":"marcosgf2005@gmail.com"
     },
     "tasks":[
         {
