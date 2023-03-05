@@ -7,10 +7,10 @@ export const Button = (props:any) => (
             padding :5,
             borderRadius: 20,
             paddingLeft: 20, paddingRight: 20,
-            margin: 5
+            margin: 5, marginBottom: 15
             
             }}>
-            <Text style={{color : Theme.colors[Theme.colorTheme].text }}>{props.text}</Text>
+            <Text style={{color : Theme.colors[Theme.colorTheme].text, fontWeight: "bold" }}>{props.text}</Text>
         </View>
     </TouchableOpacity>
 )

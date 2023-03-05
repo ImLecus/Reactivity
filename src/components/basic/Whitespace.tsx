@@ -1,4 +1,4 @@
 import { View } from "react-native";
-export const Whitespace = () => (
-    <View style={{width: 1, height: 20}}/>
+export const Whitespace = (props:any) => (
+    <View style={{width: 1, height:  props.height? props.height:20}}/>
 )

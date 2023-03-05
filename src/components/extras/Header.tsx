@@ -25,7 +25,7 @@ export default function Header(){
         <View style={style.header}>
             <Image source={require("../../assets/img/menu.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
             <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>{Language.days[date.getDay()] + date.getDate() + Language.months[date.getMonth()]}</Text>
-            <Image source={require("../../assets/img/profile_def.png")} style={style.img}/>
+            <Image source={require("../../assets/img/me.jpg")} style={style.img}/>
         </View>
     )
 }

@@ -33,7 +33,7 @@ export var colors = {
         purple:"#9381ff",
         gray: "#ccc",
         text: "#edf2f4",
-        main: "#ffb703"
+        main: "#ffb703",
     },
     transparent: "#00000000"
 }
