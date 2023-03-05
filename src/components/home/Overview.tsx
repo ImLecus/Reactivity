@@ -1,18 +1,34 @@
 import { View, ScrollView } from "react-native";
 import Subtitle from "../basic/Subtitle";
 import Widget from "./Widget";
-export default function Overview () {
+import ProgressBar from "../basic/ProgressBar";
+import Paragraph from "../basic/Paragraph";
+import { Whitespace } from "../basic/Whitespace";
+export default function Overview (props:any) {
+    let progress = 70
     return(
-        <View>
-            <Subtitle text="Progreso diario"/>
-
-            <Subtitle text="Categorías"/>
-            <ScrollView horizontal style={{flexDirection: "row", elevation: 20, paddingBottom: 20, paddingTop: 20}}>
-                <Widget color="red" text="Estudio" icon="write"/>
-                <Widget color="green" text="Felicidad" icon="mood"/>
-                <Widget color="purple" text="Ejercicio" icon="walk"/>
+        <ScrollView style={{display: (props.active == 0 ? "flex" : "none"), marginTop: 30}}>
+            <Subtitle text="Progreso diario" />
+            <Whitespace />
+            <View style={{flexDirection: "row", justifyContent: "space-around", alignItems: "baseline"}}>
+                <ProgressBar progress={progress}/>
+                <Paragraph text={progress + "%"}/>
+            </View>
+            <Whitespace />
+            <Paragraph text={"Has completado 7 de los 10 objetivos establecidos para hoy."}/>
+            <Whitespace />
+            <Subtitle text={"Recomendado para hoy"}/>
+            <Whitespace />
+            <ScrollView horizontal style={{flexDirection: "row"}}>
+                <Widget color="main" text={"Beber agua"}/>
+                <Widget color="main" text={"Beber agua"}/>
+                <Widget color="main" text={"Beber agua"}/>
             </ScrollView>
-            
-        </View>
+            <Whitespace />
+
+            <Paragraph text={"Has completado 7 de los 10 objetivos establecidos para hoy."}/>
+            <Whitespace />
+            <Subtitle text={"Recomendado para hoy"}/>
+        </ScrollView>
     )
 }
