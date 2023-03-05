@@ -32,14 +32,17 @@ export default function Header(props:any){
         "Perfil"
     ]
     return(
-        <View style={style.header}>
-            {
-                buttons[props.active]
-            }
-            <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>{titles[props.active]}</Text>
-            <TouchableOpacity onPress={props.action} style={{opacity: props.active == 1? 0 : 1}}>
-                <Image source={require("../../assets/img/me.jpg")} style={style.img}/>
-            </TouchableOpacity>
-        </View>
+        <>
+            <View style={style.header}>
+                {
+                    buttons[props.active]
+                }
+                <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>{titles[props.active]}</Text>
+                <TouchableOpacity onPress={props.action} style={{opacity: props.active == 1? 0 : 1}}>
+                    <Image source={require("../../assets/img/me.jpg")} style={style.img}/>
+                </TouchableOpacity>
+            </View>
+        </>
+        
     )
 }

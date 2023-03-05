@@ -23,7 +23,7 @@ export default function Task (props:any) {
                 </View>
             </View>
             <TouchableWithoutFeedback onPress={() => {setOpen(!open)}} >
-                <Image source={require("../../assets/img/arrow_right.png")} style={{transform: [{rotateZ: open == true? "90deg" : "0deg"}],width: 30, height: 30, tintColor: Theme.colors[Theme.colorTheme].complementary}}/>
+                <Image source={require("../../assets/img/arrow_right.png")} style={{transform: [{rotateZ: open == true? "90deg" : "0deg"}],width: 30, height: 30, tintColor: Theme.colors[Theme.colorTheme].complementary, opacity: 0.6}}/>
             </TouchableWithoutFeedback>
         </View>
         <View style={{display: (open == true ? "flex" : "none"), marginTop: 20}}>
