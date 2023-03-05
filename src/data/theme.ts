@@ -21,7 +21,7 @@ export var colors = {
         green:"#76c893",
         purple:"#9381ff",
         gray: "#ccc",
-        text: "#444",
+        text: "#444444",
         main: "#ffb703"
     },
     dark : {
@@ -37,4 +37,4 @@ export var colors = {
     },
     transparent: "#00000000"
 }
-export var colorTheme = "dark"
+export var colorTheme = "light"

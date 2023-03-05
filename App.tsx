@@ -4,7 +4,6 @@ import * as Font from "expo-font";
 import { View } from 'react-native';
 
 import PageManager from './src/components/extras/PageManager';
-import Header from './src/components/extras/Header';
 
 import * as Theme from "./src/data/theme"
 
@@ -17,11 +16,8 @@ export default function App() {
   })
   if(!fontsloaded) return null
   
- 
-
   return (
     <View style={{backgroundColor: Theme.colors[Theme.colorTheme].bg, width: "100%", height: "100%"}}>  
-      <Header></Header>
       <PageManager></PageManager>
     </View>
     

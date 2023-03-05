@@ -9,7 +9,7 @@ export default function Task (props:any) {
             {
             width: "100%", minHeight: 60,
             backgroundColor: Theme.colors[Theme.colorTheme].complementary + "30", 
-            borderRadius: 10, padding: 10, marginBottom: 10}}>
+            borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (Theme.colorTheme == "light"? 1: 0), borderColor: Theme.colors[Theme.colorTheme].text + "44"}}>
 
         <View style={{flexDirection: "row", alignItems:"center", justifyContent: "space-between"}}>
             <View style={{flexDirection: "row", alignItems: "center"}}>
@@ -23,7 +23,7 @@ export default function Task (props:any) {
                 </View>
             </View>
             <TouchableWithoutFeedback onPress={() => {setOpen(!open)}}>
-                <Image source={require("../../assets/img/arrow_right.png")} style={{width: 30, height: 30, tintColor: "white"}}/>
+                <Image source={require("../../assets/img/arrow_right.png")} style={{width: 30, height: 30, tintColor: Theme.colors[Theme.colorTheme].complementary}}/>
             </TouchableWithoutFeedback>
         </View>
         <View style={{display: (open == true ? "flex" : "none"), marginTop: 20}}>

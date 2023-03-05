@@ -24,7 +24,7 @@ export default function Overview (props:any) {
     
     let progress = 100 * completedTasks / (todayTasks.length + 1)
     return(
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{display: (props.active == 0 ? "flex" : "none")  , marginTop: 30} }>
                 <Subtitle text="Progreso diario" />
                 <Whitespace />
