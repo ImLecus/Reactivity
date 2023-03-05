@@ -5,8 +5,24 @@ import Task from "./Task";
 import ProgressBar from "../basic/ProgressBar";
 import Paragraph from "../basic/Paragraph";
 import { Whitespace } from "../basic/Whitespace";
+
+import Cache from "../../data/cache.json"
 export default function Overview (props:any) {
-    let progress = 70
+    let date:any = new Date()
+    let todayTasks = []
+    let completedTasks = 0
+    Cache.tasks.map(task => {
+                    if(task.completed == (date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear())){
+                        completedTasks ++;
+                    }
+                    else{
+                        task.completed = ""
+                    }
+                    if(task.repeat.includes(date.getDay())){
+                        todayTasks.push(task)
+                    }})
+    
+    let progress = 100 * completedTasks / (todayTasks.length + 1)
     return(
         <ScrollView>
             <View style={{display: (props.active == 0 ? "flex" : "none")  , marginTop: 30} }>
@@ -17,14 +33,15 @@ export default function Overview (props:any) {
                     <Paragraph text={progress + "%"}/>
                 </View>
                 <Whitespace />
-                <Paragraph text={"Has completado 7 de los 10 objetivos establecidos para hoy."}/>
+                <Paragraph text={"Has completado "+ completedTasks +" de los " + (todayTasks.length + 1)  + " objetivos establecidos para hoy."}/>
                 <Whitespace />
                 <Subtitle text={"Tus objetivos"}/>
                 <Whitespace />
-                <Task icon="walk" title="Camina 2km"/>
-                <Task icon="time" title="Pasar tiempo con la familia"/>
-                <Task icon="diary" title="Leer"/>
-                <Task icon="walk" title="Camina 2km"/>
+                {
+                    todayTasks.map(task => (
+                        <Task title={task.title} icon={task.icon} description={task.description} id={Cache.tasks.indexOf(task)}/>
+                    ))
+                }
                 <Whitespace height={500}/>
             </View>
         </ScrollView>

@@ -17,7 +17,9 @@ export default function Task (props:any) {
                     <Image source={Theme.icons[props.icon]} style={{tintColor: "white", width: 30, height: 30}}/>
                 </View>
                 <View style={{marginLeft: 20}}>
-                <Paragraph text={props.title.length >= 16 ? props.title.substring(0,16) + "...": props.title} opacity={1}/> 
+                <View style={{width: 180}}>
+                    <Paragraph text={(props.title.length >= 16 && open == false)? props.title.substring(0,16) + "...": props.title} opacity={1}/> 
+                </View>
                 </View>
             </View>
             <TouchableWithoutFeedback onPress={() => {setOpen(!open)}}>

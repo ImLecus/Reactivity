@@ -4,47 +4,25 @@
         "photo": "../../assets/img/profile_def.png",
         "created":"1/1/2023"
     },
-    "journal":{
-        "entries": [
-            {
-                "day":"1/1/2023",
-                "emoScore": 4,
-                "text": "hola mundo esta es mi primera entrada"
-            },
-            {
-                "day":"2/1/2023",
-                "emoScore": 5,
-                "text": "vamos a hacer un caché de usuario para posteriormente llevarlo al backend"
-            },
-            {
-                "day":"3/1/2023",
-                "emoScore": 3,
-                "text" : "el caché del usuario y los datos del server se sincronizarán al conectarse"
-            }
-        ]
-    },
-    "calendar":{
-        "entries" : [
-            {
-                "day":"2/1/2023",
-                "name":"Gimnasio",
-                "begin":"00:00",
-                "end":"23:59",
-                "type":"fit",
-                "notification":true,
-                "delay": "1:30"
-            },
-            {
-                "day":"6/1/2023",
-                "name":"Examen",
-                "begin":"9:00",
-                "end":"10:00",
-                "type":"study",
-                "notification":false,
-                "delay": "0"
-            }
-        ]
-    }
+    "tasks":[
+        {
+            "title":"Camina 2km",
+            "icon":"walk",
+            "description":"Hoy toca hacer piernas.",
+            "repeat":[0,1,2,3,4,5,6],
+            "completed":"5/3/2023"
+        },
+        {
+            "title":"Pasar tiempo con la familia",
+            "icon":"time",
+            "repeat" : [0,1,2,3,4,5,6]
+        },
+        {
+            "title":"Anota tu estado de ánimo",
+            "icon":"mood",
+            "repeat":[0,2,4,6]
+        }
+    ]
     
 }
 

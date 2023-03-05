@@ -13,7 +13,7 @@ export default function Home(){
     return(
     <View style={{padding: 30, marginTop: 70}}>
         <Title text={"Bienvenido de nuevo, " + Cache.user.username +"."}/>
-        <Paragraph text={"Un día menos para cumplir tus objetivos."}/>
+        <Paragraph text={"Un día menos para cumplir tus metas."}/>
         <Whitespace />
         <View style={{flexDirection: "row", justifyContent: "center"}}>
             <Button text="General" active={page} action={() => {setPage(0)}} page={0}/>
