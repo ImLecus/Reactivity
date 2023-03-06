@@ -3,7 +3,7 @@ import Paragraph from "../basic/Paragraph";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Theme from "../../data/theme"
 import ProgressBar from "../basic/ProgressBar";
-export default function Widget(props:any){
+export default function Widget(props){
     return(
         <LinearGradient 
             style={{width: 150, height: 150,borderRadius: 5, backgroundColor: "red", margin: 5, elevation: 20, alignItems: "center", padding: 20}}

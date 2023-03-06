@@ -1,11 +1,10 @@
-import {Text } from "react-native";
+import { Text } from "react-native";
 import * as Theme from "../../data/theme"
-export default function Subtitle(props:any){
+export default function Paragraph(props){
     return(
         <Text style={{
-            fontFamily: "JosefinSans",
-            fontSize: 24,
-            fontWeight: "bold",
+            fontFamily: "Inter",
+            fontSize: 18,
             color: props.color ? props.color : Theme.colors[Theme.colorTheme].text,
             opacity: props.opacity ? props.opacity : 0.7
         }}>

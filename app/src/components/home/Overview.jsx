@@ -7,8 +7,8 @@ import Paragraph from "../basic/Paragraph";
 import { Whitespace } from "../basic/Whitespace";
 
 import Cache from "../../data/cache.json"
-export default function Overview (props:any) {
-    let date:any = new Date()
+export default function Overview (props) {
+    let date = new Date()
     let todayTasks = []
     let completedTasks = 0
     Cache.tasks.map(task => {

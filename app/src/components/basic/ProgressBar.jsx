@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import * as Theme from "../../data/theme"
-export default function ProgressBar (props:any) {
+export default function ProgressBar (props) {
     return(
         <View style={{
                 width:  props.width ? props.width :  "70%",

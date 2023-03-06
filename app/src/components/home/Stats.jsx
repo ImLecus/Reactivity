@@ -4,7 +4,7 @@ import Widget from "./Widget";
 import Task from "./Task";
 import Paragraph from "../basic/Paragraph";
 import { Whitespace } from "../basic/Whitespace";
-export default function Stats(props:any){
+export default function Stats(props){
     return(
         <ScrollView>
             <View style={{display: (props.active == 1 ? "flex" : "none")  , marginTop: 30} }>

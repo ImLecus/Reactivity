@@ -1,6 +1,6 @@
 import {Text} from "react-native";
 import * as Theme from "../../data/theme"
-export default function Title(props:any){
+export default function Title(props){
     return(
         <Text style={{
             fontFamily: "JosefinSans",

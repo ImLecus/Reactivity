@@ -1,6 +1,6 @@
 import { View, TouchableOpacity, Text } from "react-native";
 import * as Theme from "../../data/theme"
-export const Button = (props:any) => (
+export const Button = (props) => (
     <TouchableOpacity onPress={props.action}>
         <View style={{
             backgroundColor: props.active == props.page ? Theme.colors[Theme.colorTheme].main : "#00000000",

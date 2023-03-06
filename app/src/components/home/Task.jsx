@@ -2,7 +2,7 @@ import { View, Image, TouchableWithoutFeedback } from "react-native";
 import * as Theme from "../../data/theme"
 import Paragraph from "../basic/Paragraph";
 import { useState } from "react"
-export default function Task (props:any) {
+export default function Task (props) {
     const [open,setOpen] = useState(false)
     return(
         <View style={

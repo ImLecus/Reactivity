@@ -18,15 +18,8 @@ const style = StyleSheet.create({
     }
 })
 
-export default function Header(props:any){
+export default function Header(props){
     let date = new Date();
-    let buttons = [ <TouchableOpacity>
-                        <Image source={require("../../assets/img/menu.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
-                    </TouchableOpacity>, 
-                    <TouchableOpacity onPress={props.return}>
-                        <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
-                    </TouchableOpacity>
-                ]
     let titles = [
         Language.days[date.getDay()] + date.getDate() + Language.months[date.getMonth()],
         "Perfil"
@@ -34,11 +27,11 @@ export default function Header(props:any){
     return(
         <>
             <View style={style.header}>
-                {
-                    buttons[props.active]
-                }
-                <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>{titles[props.active]}</Text>
-                <TouchableOpacity onPress={props.action} style={{opacity: props.active == 1? 0 : 1}}>
+                <TouchableOpacity >
+                    <Image source={require("../../assets/img/menu.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
+                </TouchableOpacity>
+                <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>{titles[props.id]}</Text>
+                <TouchableOpacity onPress={props.action} style={{opacity: props.id == 1? 0 : 1}}>
                     <Image source={require("../../assets/img/me.jpg")} style={style.img}/>
                 </TouchableOpacity>
             </View>
