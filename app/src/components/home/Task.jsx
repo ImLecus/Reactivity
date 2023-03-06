@@ -8,7 +8,7 @@ export default function Task (props) {
         <View style={
             {
             width: "100%", minHeight: 60,
-            backgroundColor: Theme.colors[Theme.colorTheme].complementary + "30", 
+            backgroundColor: (Theme.colorTheme == "dark" ? Theme.colors[Theme.colorTheme].complementary + "30": Theme.colors.transparent), 
             borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (Theme.colorTheme == "light"? 1: 0), borderColor: Theme.colors[Theme.colorTheme].text + "44"}}>
 
         <View style={{flexDirection: "row", alignItems:"center", justifyContent: "space-between"}}>

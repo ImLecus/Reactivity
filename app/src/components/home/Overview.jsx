@@ -1,10 +1,10 @@
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import Subtitle from "../basic/Subtitle";
-import Widget from "./Widget";
 import Task from "./Task";
 import ProgressBar from "../basic/ProgressBar";
 import Paragraph from "../basic/Paragraph";
 import { Whitespace } from "../basic/Whitespace";
+import * as Theme from "../../data/theme"
 
 import Cache from "../../data/cache.json"
 export default function Overview (props) {
@@ -55,6 +55,27 @@ export default function Overview (props) {
                         <Task title={task.title} icon={task.icon} description={task.description} id={Cache.tasks.indexOf(task)}/>
                     ))
                 }
+
+                <TouchableOpacity onPress={() => {}} style={{width: "100%", minHeight: 60, backgroundColor: (Theme.colorTheme == "dark" ? Theme.colors[Theme.colorTheme].complementary + "30": Theme.colors.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (Theme.colorTheme == "light"? 1: 0), borderColor: Theme.colors[Theme.colorTheme].text + "44"}}>
+                    
+                        <View style={{flexDirection: "row", alignItems: "center"}}>
+
+                            <View style={{width: 40, height: 40, backgroundColor: Theme.colors.transparent, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
+                    
+                                <Image source={Theme.icons.add} style={{tintColor: Theme.colors[Theme.colorTheme].complementary + "aa", width: 30, height: 30}}/>
+                
+                            </View>
+
+                            <View style={{marginLeft: 20}}>
+                            
+                                <Paragraph text="Añadir nuevo objetivo..." opacity={1}/> 
+
+                            </View>
+
+                        </View>
+
+                </TouchableOpacity>
+
                 <Whitespace height={500}/>
             </View>
         </ScrollView>

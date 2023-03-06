@@ -15,23 +15,23 @@ export var icons = {
 export var colors = {
     light : {
         bg : "#edf2f4",
-        complementary: "#222",
+        complementary: "#222222",
         red: "#ef233c",
         orange: "#fb8500",
         green:"#76c893",
         purple:"#9381ff",
-        gray: "#ccc",
+        gray: "#cccccc",
         text: "#444444",
         main: "#ffb703"
     },
     dark : {
-        bg: "#333",
+        bg: "#333333",
         complementary: "#edf2f4",
         red: "#ef233c",
         green:"#76c893",
         orange: "#fb8500",
         purple:"#9381ff",
-        gray: "#ccc",
+        gray: "#cccccc",
         text: "#edf2f4",
         main: "#ffb703",
     },
