@@ -7,6 +7,7 @@ export default function PageManager(){
     return(
         <>
             {
+                // La acción del PageManager es alternar las distintas páginas a modo de mediador 
                 pages[active]
             }
         </>

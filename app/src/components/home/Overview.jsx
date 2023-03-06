@@ -25,19 +25,32 @@ export default function Overview (props) {
     let progress = 100 * completedTasks / (todayTasks.length + 1)
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
+
             <View style={{display: (props.active == 0 ? "flex" : "none")  , marginTop: 30} }>
+
                 <Subtitle text="Progreso diario" />
+
                 <Whitespace />
+
                 <View style={{flexDirection: "row", justifyContent: "space-around", alignItems: "baseline"}}>
+
                     <ProgressBar progress={progress}/>
+
                     <Paragraph text={progress + "%"}/>
+
                 </View>
+
                 <Whitespace />
+
                 <Paragraph text={"Has completado "+ completedTasks +" de los " + (todayTasks.length + 1)  + " objetivos establecidos para hoy."}/>
+
                 <Whitespace />
+
                 <Subtitle text={"Tus objetivos"}/>
+
                 <Whitespace />
                 {
+                    // Añadir todas las tareas cuyo día coincida con el de hoy
                     todayTasks.map(task => (
                         <Task title={task.title} icon={task.icon} description={task.description} id={Cache.tasks.indexOf(task)}/>
                     ))

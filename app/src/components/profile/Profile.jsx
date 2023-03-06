@@ -36,45 +36,68 @@ const styles = StyleSheet.create({
     }
 })
 
+export const Button = (props) => (
+
+    <TouchableOpacity style={styles.listItem}>
+
+        <Image source={props.img} style={props.styles}/>
+
+        <Paragraph text={props.text} />
+
+    </TouchableOpacity>
+)
+
 export default function Profile(props){
     return(
     <>
-    <View style={styles.header}>
-        <TouchableOpacity onPress={props.action}>
-            <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
-        </TouchableOpacity>
-        <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>Perfil</Text>
-        <TouchableOpacity style={{opacity: 0}}>
-            <Image source={require("../../assets/img/me.jpg")} style={styles.img}/>
-        </TouchableOpacity>
-    </View>
-    <View style={{padding: 30, marginTop: 70, alignItems: "center"}}>
-        <Image source={require("../../assets/img/me.jpg")} style={{borderRadius: 100, width: 150, height: 150, marginBottom: 30}}/>
-        <Title text={Cache.user.username}/>
-        <Paragraph text={Cache.user.mail}/>
-        <Whitespace />
-        <TouchableOpacity style={{borderRadius: 5, borderWidth: 1, borderColor: Theme.colors[Theme.colorTheme].text + "77", padding: 8, paddingLeft: 16, paddingRight: 16}}>
-            <Paragraph text="Editar perfil"/>
-        </TouchableOpacity>
-        <Whitespace height={50}/>
-        <TouchableOpacity style={styles.listItem}>
-            <Image source={require("../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
-            <Paragraph text="Premium" color={Theme.colors[Theme.colorTheme].main}/>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.listItem}>
-        <Image source={require("../../assets/img/friends.png")} style={[styles.image,styles.nopremium]}/>
-            <Paragraph text="Amigos" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.listItem}>
-        <Image source={require("../../assets/img/star.png")} style={[styles.image,styles.nopremium]}/>
-            <Paragraph text="Logros" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.listItem}>
-        <Image source={require("../../assets/img/logout.png")} style={[styles.image,styles.nopremium]}/>
-            <Paragraph text="Cerrar sesión" />
-        </TouchableOpacity>
+        <View style={styles.header}>
 
-    </View>
+            <TouchableOpacity onPress={props.action}>
+
+                <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
+            
+            </TouchableOpacity>
+
+            <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>Perfil</Text>
+
+            <TouchableOpacity style={{opacity: 0}}>
+
+                <Image source={require("../../assets/img/me.jpg")} style={styles.img}/>
+
+            </TouchableOpacity>
+
+        </View>
+
+        <View style={{padding: 30, marginTop: 70, alignItems: "center"}}>
+
+            <Image source={require("../../assets/img/me.jpg")} style={{borderRadius: 100, width: 150, height: 150, marginBottom: 30}}/>
+
+            <Title text={Cache.user.username}/>
+
+            <Paragraph text={Cache.user.mail}/>
+
+            <Whitespace />
+
+            <TouchableOpacity style={{borderRadius: 5, borderWidth: 1, borderColor: Theme.colors[Theme.colorTheme].text + "77", padding: 8, paddingLeft: 16, paddingRight: 16}}>
+                <Paragraph text="Editar perfil"/>
+            </TouchableOpacity>
+
+            <Whitespace height={50}/>
+
+            <TouchableOpacity style={styles.listItem}>
+
+                <Image source={require("../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
+
+                <Paragraph text="Premium" color={Theme.colors[Theme.colorTheme].main}/>
+
+            </TouchableOpacity>
+
+
+            <Button img={require("../../assets/img/friends.png")} styles={[styles.image,styles.nopremium]} text="Amigos"/>
+            <Button img={require("../../assets/img/star.png")} styles={[styles.image,styles.nopremium]} text="Logros"/>
+            <Button img={require("../../assets/img/logout.png")} styles={[styles.image,styles.nopremium]} text="Cerrar sesión"/>
+
+        </View>
     </>
     
     )
