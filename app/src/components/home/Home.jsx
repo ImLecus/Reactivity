@@ -1,4 +1,4 @@
-import { View} from "react-native"
+import { View, Text} from "react-native"
 import Title from "../basic/Title"
 import Paragraph from "../basic/Paragraph"
 import { Whitespace } from "../basic/Whitespace"
@@ -8,6 +8,7 @@ import Header from "../extras/Header"
 import Overview from "./Overview"
 import Stats from "./Stats"
 import { useState } from "react"
+import * as Theme from "../../data/theme"
 export default function Home(props){
     const [page,setPage] = useState(0)
     return(
@@ -39,7 +40,14 @@ export default function Home(props){
                 
                 <Stats active={page}/>
             </View>
-        </View>
+
+
+        </View>     
+        {  /*  
+        <View style={{position: "absolute", backgroundColor: Theme.colors[Theme.colorTheme].bg + "99", width: "100%", height: "100%"}}>
+            <Text>ola</Text>
+        </View> */
+}
     </>
     
     )

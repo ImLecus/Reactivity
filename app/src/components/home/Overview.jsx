@@ -1,4 +1,4 @@
-import { View, ScrollView, Image, TouchableOpacity } from "react-native";
+import { View, ScrollView, Image, TouchableOpacity, Text } from "react-native";
 import Subtitle from "../basic/Subtitle";
 import Task from "./Task";
 import ProgressBar from "../basic/ProgressBar";

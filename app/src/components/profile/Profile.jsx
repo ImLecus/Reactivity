@@ -84,7 +84,7 @@ export default function Profile(props){
 
             <Whitespace height={50}/>
 
-            <TouchableOpacity style={styles.listItem}>
+            <TouchableOpacity style={styles.listItem} onPress={props.premium}>
 
                 <Image source={require("../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
 
