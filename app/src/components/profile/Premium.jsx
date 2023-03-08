@@ -1,8 +1,5 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
-import Title from "../basic/Title"
 import Paragraph from "../basic/Paragraph"
-import { Whitespace } from "../basic/Whitespace"
-import Cache from "../../data/cache.json"
 import * as Theme from "../../data/theme"
 
 const styles = StyleSheet.create({
@@ -60,6 +57,5 @@ export default function Premium(props){
             <Paragraph text="Premium"/>
         </View>
     </>
-    
     )
 }

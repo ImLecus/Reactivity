@@ -8,7 +8,9 @@ export default function PageManager(){
 
         <Home action={() => {setActive(1)}}/>,
         <Profile action={() => {setActive(0)}} premium={() => setActive(2)}/>, 
-        <Premium action={() => {setActive(1)}}/>]
+        <Premium action={() => {setActive(1)}}/>
+    
+    ]
         
     return(
         <>
