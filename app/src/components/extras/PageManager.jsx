@@ -1,27 +1,17 @@
-import { useState } from "react";
-import { createContext } from "react";
+import { useState, useContext } from "react";
 import Home from "../home/Home";
-import Profile from "../profile/Profile";
-import Premium from "../profile/Premium"
+import { ThemeContext } from "../UserContext";
 
-export const Context = createContext()
 export default function PageManager(){
-    const [active, setActive] = useState(0)
-    const pages = [
 
-        <Home/>,
-        <Profile/>, 
-        <Premium/>
-    
-    ]
-        
+    const [colorTheme,setTheme] = useState("dark")
+
     return(
-        <Context.Provider>
+        <ThemeContext.Provider value={colorTheme}>
             {
-                // La acción del PageManager es alternar las distintas páginas a modo de mediador 
-                pages[active]
+                <Home/>
             }
-        </Context.Provider>
+        </ThemeContext.Provider>
         
     )
 }

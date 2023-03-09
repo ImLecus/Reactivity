@@ -1,20 +1,21 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
 import {Paragraph} from "../basic/Components"
 import * as Theme from "../../data/theme"
+import {theme} from "../../data/theme"
 const styles = StyleSheet.create({
     listItem : {
         borderBottomWidth: 1,
-        borderBottomColor: Theme.colors[Theme.colorTheme].text + "55",
+        borderBottomColor: theme[Theme.colorTheme].text + "55",
         padding: 15, flexDirection: "row", alignItems: "center"
     },
     image: {
         width: 25, height: 25, marginRight: 10
     },
     premium : {
-        tintColor: Theme.colors[Theme.colorTheme].main
+        tintColor: theme[Theme.colorTheme].main
     },
     nopremium : {
-        tintColor: Theme.colors[Theme.colorTheme].text + "aa"
+        tintColor: theme[Theme.colorTheme].text + "aa"
     },
     header : {
         width: "100%",
@@ -39,11 +40,11 @@ export default function Premium(props){
 
             <TouchableOpacity onPress={props.action}>
 
-                <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
+                <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: theme[Theme.colorTheme].text}}/>
             
             </TouchableOpacity>
 
-            <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>Reactivity Premium</Text>
+            <Text style={{fontFamily : "Inter", color: theme[Theme.colorTheme].text}}>Reactivity Premium</Text>
 
             <TouchableOpacity style={{opacity: 0}}>
 

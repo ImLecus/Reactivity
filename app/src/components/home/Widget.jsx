@@ -2,12 +2,13 @@ import { Image } from "react-native";
 import {Paragraph} from "../basic/Components";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Theme from "../../data/theme"
+import {theme} from "../../data/theme"
 import ProgressBar from "../basic/ProgressBar";
 export default function Widget(props){
     return(
         <LinearGradient 
             style={{width: 150, height: 150,borderRadius: 5, backgroundColor: "red", margin: 5, elevation: 20, alignItems: "center", padding: 20}}
-            colors={[Theme.colors[Theme.colorTheme][props.color], Theme.lightColors[props.color]]}
+            colors={[theme[Theme.colorTheme][props.color], Theme.lightColors[props.color]]}
             start={[0, 0]} end={[1, 1]}
         >
         <Image source={Theme.icons[props.icon]} style={{margin: 10, tintColor: "white", display: "none"}}/>

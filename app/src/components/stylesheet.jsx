@@ -36,11 +36,5 @@ export const style = StyleSheet.create({
         width: 35,
         height: 35,
         borderRadius: 50
-    },
-    premium : {
-        tintColor: Theme.colors[Theme.colorTheme].main
-    },
-    nopremium : {
-        tintColor: Theme.colors[Theme.colorTheme].text + "aa"
     }
 })

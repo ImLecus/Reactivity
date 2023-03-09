@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import PageManager from './src/components/extras/PageManager';
 
 import * as Theme from "./src/data/theme"
-
+import {theme} from "./src/data/theme"
 
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
   if(!fontsloaded) return null
   
   return (
-    <View style={{backgroundColor: Theme.colors[Theme.colorTheme].bg, width: "100%", height: "100%"}}>  
+    <View style={{ width: "100%", height: "100%"}}>  
       <PageManager></PageManager>
     </View>
     

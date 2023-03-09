@@ -1,9 +1,15 @@
-import { View, Image, Text, TouchableOpacity } from "react-native";
+import { useContext } from "react";
+import { View, Image, Text, TouchableOpacity, Alert } from "react-native";
 import Language from "../../data/language.json"
 import * as Theme from "../../data/theme"
+import {theme} from "../../data/theme"
 import { style } from "../stylesheet";
+import { ThemeContext } from "../UserContext";
 
-export default function Header(props){
+export default function Header({id}){
+
+    const colorTheme = useContext(ThemeContext)
+
     let date = new Date();
     let titles = [
         Language.days[date.getDay()] + date.getDate() + Language.months[date.getMonth()],
@@ -12,13 +18,19 @@ export default function Header(props){
     return(
         <>
             <View style={style.header}>
-                <TouchableOpacity >
-                    <Image source={require("../../assets/img/menu.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
+
+                <TouchableOpacity>
+
+                    <Image source={require("../../assets/img/menu.png")} style={{width: 35, height: 35, tintColor:theme[colorTheme].text}}/>
+                
                 </TouchableOpacity>
-                <Text style={{fontFamily : "Inter", color: Theme.colors[Theme.colorTheme].text}}>{titles[props.id]}</Text>
-                <TouchableOpacity onPress={props.action} style={{opacity: props.id == 1? 0 : 1}}>
+
+                <Text style={{fontFamily : "Inter", color:theme[colorTheme].text}}>{titles[id]}</Text>
+
+                <TouchableOpacity  style={{opacity: id == 1? 0 : 1}}>
                     <Image source={require("../../assets/img/me.jpg")} style={style.profile}/>
                 </TouchableOpacity>
+
             </View>
         </>
         

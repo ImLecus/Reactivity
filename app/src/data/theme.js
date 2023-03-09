@@ -12,7 +12,7 @@ export var icons = {
     mood: require("../assets/img/mood.png"),
     add: require("../assets/img/add.png")
 }
-export var colors = {
+export var theme = {
     light : {
         bg : "#edf2f4",
         complementary: "#222222",
@@ -37,4 +37,3 @@ export var colors = {
     },
     transparent: "#00000000"
 }
-export var colorTheme = "light"

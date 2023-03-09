@@ -1,38 +1,56 @@
 import { Text, View, TouchableOpacity } from "react-native";
-import * as Theme from "../../data/theme"
+import {theme} from "../../data/theme"
+import { ThemeContext } from "../UserContext";
 import { style } from "../stylesheet"
-export const Paragraph = ({text, color, opacity}) => (
+import { useContext } from "react";
+
+
+export const Paragraph = ({text, color, opacity}) => {
+    const colorTheme = useContext(ThemeContext)
+    return(
         <Text style={[style.p, {
-            color: color ? color : Theme.colors[Theme.colorTheme].text,
+            color: color ? color : theme[colorTheme].text,
             opacity: opacity ? opacity : 0.7
         }]}>
             {text}
         </Text>
-)
-export const Subtitle = ({text, color, opacity}) => (
+    )
+}
+export const Subtitle = ({text, color, opacity}) => {
+    const colorTheme = useContext(ThemeContext)
+    return(
         <Text style={[ style.subtitle , {
-            color: color ? color : Theme.colors[Theme.colorTheme].text,
+            color: color ? color : theme[colorTheme].text,
             opacity: opacity ? opacity : 0.7 }]}>
             {text}
         </Text>
-)
-export const Title = ({text}) => (
-        <Text style={[style.title, { color: Theme.colors[Theme.colorTheme].text}]}>
+    )
+}
+export const Title = ({text}) => {
+    const colorTheme = useContext(ThemeContext)
+    return(
+        <Text style={[style.title, { color: theme[colorTheme].text}]}>
             {text}
         </Text>
-)
-export const Page = (props) => (
-    <View style={{}}>
-
+    )
+}
+export const Page = () => {
+    const colorTheme = useContext(ThemeContext)
+    return(
+    <View style={{backgroundColor: theme[colorTheme].bg + "00", width: "100%", height: "100%"}}>
     </View>
+    )
+}
+export const Whitespace = ({h}) => (
+    <View style={{width: 20, height: (h? h : 20)}}/>
 )
-export const Whitespace = ({height}) => (
-    <View style={{width: 1, height:  height? height:20}}/>
-)
-export const Button = ({action, active, text, page}) => (
+export const Button = ({action, active, text, page}) => {
+    const colorTheme = useContext(ThemeContext)
+    return(
     <TouchableOpacity onPress={action}>
-        <View style={[style.button,{backgroundColor: active == page ? Theme.colors[Theme.colorTheme].main : "#00000000"}]}>
-            <Text style={{color : Theme.colors[Theme.colorTheme].text, fontWeight: "bold" }}>{text}</Text>
+        <View style={[style.button,{backgroundColor: active == page ? theme[colorTheme].main : "#00000000"}]}>
+            <Text style={{color : theme[colorTheme].text, fontWeight: "bold" }}>{text}</Text>
         </View>
     </TouchableOpacity>
-)
+    )
+}

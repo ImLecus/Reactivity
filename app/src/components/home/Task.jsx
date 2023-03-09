@@ -1,21 +1,25 @@
 import { View, Image, TouchableWithoutFeedback } from "react-native";
 import * as Theme from "../../data/theme"
+import {theme} from "../../data/theme"
 import {Paragraph} from "../basic/Components";
 import { useState } from "react"
+import { ThemeContext } from "../UserContext";
+import { useContext } from "react";
 export default function Task (props) {
+    const colorTheme = useContext(ThemeContext)
     const [open,setOpen] = useState(false)
     return(
         <View style={
             {
             width: "100%", minHeight: 60,
-            backgroundColor: (Theme.colorTheme == "dark" ? Theme.colors[Theme.colorTheme].complementary + "30": Theme.colors.transparent), 
-            borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (Theme.colorTheme == "light"? 1: 0), borderColor: Theme.colors[Theme.colorTheme].text + "44"}}>
+            backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), 
+            borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
 
         <View style={{flexDirection: "row", alignItems:"center", justifyContent: "space-between"}}>
             
             <View style={{flexDirection: "row", alignItems: "center"}}>
 
-                <View style={{width: 40, height: 40, backgroundColor: Theme.colors[Theme.colorTheme].main, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
+                <View style={{width: 40, height: 40, backgroundColor: theme[colorTheme].main, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
                     
                     <Image source={Theme.icons[props.icon]} style={{tintColor: "white", width: 30, height: 30}}/>
                 
@@ -35,7 +39,7 @@ export default function Task (props) {
 
             <TouchableWithoutFeedback onPress={() => {setOpen(!open)}} >
 
-                <Image source={require("../../assets/img/arrow_right.png")} style={{transform: [{rotateZ: open == true? "90deg" : "0deg"}],width: 30, height: 30, tintColor: Theme.colors[Theme.colorTheme].complementary, opacity: 0.6}}/>
+                <Image source={require("../../assets/img/arrow_right.png")} style={{transform: [{rotateZ: open == true? "90deg" : "0deg"}],width: 30, height: 30, tintColor: theme[colorTheme].complementary, opacity: 0.6}}/>
             
             </TouchableWithoutFeedback>
 

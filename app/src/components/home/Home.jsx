@@ -1,27 +1,28 @@
-import { View } from "react-native"
+import {View} from "react-native"
 import Cache from "../../data/cache.json"
 import Header from "../extras/Header"
 import Overview from "./Overview"
 import Stats from "./Stats"
-import { useContext, useState } from "react"
+import { useState, useContext } from "react"
 import {Title, Paragraph, Whitespace, Button} from "../basic/Components"
-import {Context} from "../extras/PageManager"
+import { ThemeContext } from "../UserContext"
+import {theme} from "../../data/theme"
+export default function Home(){
 
-export default function Home({action}){
+    const colorTheme = useContext(ThemeContext)
     const [page,setPage] = useState(0)
     return(
-    <>
+    <View style={{backgroundColor: theme[colorTheme].bg}}>
         {
             // Header que lleva al menú
         }
-        <Header id={0} action={action}/>
+        <Header id={0}/>
 
         <View style={{padding: 30, marginTop: 70}}>
 
             <Title text={"Bienvenido de nuevo, " + Cache.user.username +"."}/>
 
             <Paragraph text={"Un día menos para cumplir tus metas."}/>
-
             <Whitespace />
 
             <View style={{flexDirection: "row", justifyContent: "center"}}>
@@ -41,12 +42,8 @@ export default function Home({action}){
 
 
         </View>     
-        {  /*  
-        <View style={{position: "absolute", backgroundColor: Theme.colors[Theme.colorTheme].bg + "99", width: "100%", height: "100%"}}>
-            <Text>ola</Text>
-        </View> */
-}
-    </>
+
+    </View>
     
     )
 }

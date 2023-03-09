@@ -2,11 +2,13 @@ import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import Task from "./Task";
 import ProgressBar from "../basic/ProgressBar";
 import * as Theme from "../../data/theme"
-
+import {theme} from "../../data/theme"
 import { Subtitle, Whitespace, Paragraph } from "../basic/Components";
-
+import { ThemeContext } from "../UserContext";
 import Cache from "../../data/cache.json"
+import { useContext } from "react";
 export default function Overview (props) {
+    const colorTheme = useContext(ThemeContext)
     let date = new Date()
     let todayTasks = []
     let completedTasks = 0
@@ -55,13 +57,13 @@ export default function Overview (props) {
                     ))
                 }
 
-                <TouchableOpacity onPress={() => {}} style={{width: "100%", minHeight: 60, backgroundColor: (Theme.colorTheme == "dark" ? Theme.colors[Theme.colorTheme].complementary + "30": Theme.colors.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (Theme.colorTheme == "light"? 1: 0), borderColor: Theme.colors[Theme.colorTheme].text + "44"}}>
+                <TouchableOpacity onPress={() => {}} style={{width: "100%", minHeight: 60, backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
                     
                         <View style={{flexDirection: "row", alignItems: "center"}}>
 
-                            <View style={{width: 40, height: 40, backgroundColor: Theme.colors.transparent, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
+                            <View style={{width: 40, height: 40, backgroundColor: theme.transparent, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
                     
-                                <Image source={Theme.icons.add} style={{tintColor: Theme.colors[Theme.colorTheme].complementary + "aa", width: 30, height: 30}}/>
+                                <Image source={Theme.icons.add} style={{tintColor: theme[colorTheme].complementary + "aa", width: 30, height: 30}}/>
                 
                             </View>
 
@@ -75,7 +77,7 @@ export default function Overview (props) {
 
                 </TouchableOpacity>
 
-                <Whitespace height={500}/>
+                <Whitespace h={500}/>
             </View>
         </ScrollView>
     )
