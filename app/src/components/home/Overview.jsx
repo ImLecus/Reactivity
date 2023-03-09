@@ -1,10 +1,9 @@
-import { View, ScrollView, Image, TouchableOpacity, Text } from "react-native";
-import Subtitle from "../basic/Subtitle";
+import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import Task from "./Task";
 import ProgressBar from "../basic/ProgressBar";
-import Paragraph from "../basic/Paragraph";
-import { Whitespace } from "../basic/Whitespace";
 import * as Theme from "../../data/theme"
+
+import { Subtitle, Whitespace, Paragraph } from "../basic/Components";
 
 import Cache from "../../data/cache.json"
 export default function Overview (props) {

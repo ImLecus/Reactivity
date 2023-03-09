@@ -1,5 +1,5 @@
 import { Image } from "react-native";
-import Paragraph from "../basic/Paragraph";
+import {Paragraph} from "../basic/Components";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Theme from "../../data/theme"
 import ProgressBar from "../basic/ProgressBar";

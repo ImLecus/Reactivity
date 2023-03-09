@@ -1,7 +1,5 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
-import Title from "../basic/Title"
-import Paragraph from "../basic/Paragraph"
-import { Whitespace } from "../basic/Whitespace"
+import {Title, Paragraph, Whitespace} from "../basic/Components"
 import Cache from "../../data/cache.json"
 import * as Theme from "../../data/theme"
 
@@ -36,23 +34,23 @@ const styles = StyleSheet.create({
     }
 })
 
-export const Button = (props) => (
+export const Button = ({img, styles, text}) => (
 
     <TouchableOpacity style={styles.listItem}>
 
-        <Image source={props.img} style={props.styles}/>
+        <Image source={img} style={styles}/>
 
-        <Paragraph text={props.text} />
+        <Paragraph text={text} />
 
     </TouchableOpacity>
 )
 
-export default function Profile(props){
+export default function Profile({action, premium}){
     return(
     <>
         <View style={styles.header}>
 
-            <TouchableOpacity onPress={props.action}>
+            <TouchableOpacity onPress={action}>
 
                 <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: Theme.colors[Theme.colorTheme].text}}/>
             
@@ -84,7 +82,7 @@ export default function Profile(props){
 
             <Whitespace height={50}/>
 
-            <TouchableOpacity style={styles.listItem} onPress={props.premium}>
+            <TouchableOpacity style={styles.listItem} onPress={premium}>
 
                 <Image source={require("../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
 

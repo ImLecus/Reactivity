@@ -1,7 +1,4 @@
-import { View, Text} from "react-native"
-import Title from "../basic/Title"
-import Paragraph from "../basic/Paragraph"
-import { Whitespace } from "../basic/Whitespace"
+import { View } from "react-native"
 import Cache from "../../data/cache.json"
 import { Button } from "../basic/Buttons"
 import Header from "../extras/Header"
@@ -9,6 +6,8 @@ import Overview from "./Overview"
 import Stats from "./Stats"
 import { useState } from "react"
 import * as Theme from "../../data/theme"
+import {Title, Paragraph, Whitespace} from "../basic/Components"
+
 export default function Home(props){
     const [page,setPage] = useState(0)
     return(

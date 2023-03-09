@@ -1,9 +1,5 @@
 import { View, ScrollView } from "react-native";
-import Subtitle from "../basic/Subtitle";
-import Widget from "./Widget";
-import Task from "./Task";
-import Paragraph from "../basic/Paragraph";
-import { Whitespace } from "../basic/Whitespace";
+import {Whitespace, Paragraph, Subtitle} from "../basic/Components"
 export default function Stats(props){
     return(
         <ScrollView>
