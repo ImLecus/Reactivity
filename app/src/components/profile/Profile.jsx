@@ -2,7 +2,7 @@ import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
 import {Title, Paragraph, Whitespace} from "../basic/Components"
 import Cache from "../../data/cache.json"
 import * as Theme from "../../data/theme"
-
+import { style } from "../stylesheet"
 const styles = StyleSheet.create({
     listItem : {
         borderBottomWidth: 1,
@@ -11,26 +11,6 @@ const styles = StyleSheet.create({
     },
     image: {
         width: 25, height: 25, marginRight: 10
-    },
-    premium : {
-        tintColor: Theme.colors[Theme.colorTheme].main
-    },
-    nopremium : {
-        tintColor: Theme.colors[Theme.colorTheme].text + "aa"
-    },
-    header : {
-        width: "100%",
-        position: "absolute",
-        top: 0,
-        padding: 30,
-        flexDirection: "row",
-        justifyContent :"space-between",
-        alignItems: "center"
-    },
-    img: {
-        width: 35,
-        height: 35,
-        borderRadius: 50
     }
 })
 
@@ -48,7 +28,7 @@ export const Button = ({img, styles, text}) => (
 export default function Profile({action, premium}){
     return(
     <>
-        <View style={styles.header}>
+        <View style={style.header}>
 
             <TouchableOpacity onPress={action}>
 
@@ -60,7 +40,7 @@ export default function Profile({action, premium}){
 
             <TouchableOpacity style={{opacity: 0}}>
 
-                <Image source={require("../../assets/img/me.jpg")} style={styles.img}/>
+                <Image source={require("../../assets/img/me.jpg")} style={style.profile}/>
 
             </TouchableOpacity>
 
@@ -84,16 +64,16 @@ export default function Profile({action, premium}){
 
             <TouchableOpacity style={styles.listItem} onPress={premium}>
 
-                <Image source={require("../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
+                <Image source={require("../../assets/img/premium.png")} style={[styles.image,style.premium]}/>
 
                 <Paragraph text="Premium" color={Theme.colors[Theme.colorTheme].main}/>
 
             </TouchableOpacity>
 
 
-            <Button img={require("../../assets/img/friends.png")} styles={[styles.image,styles.nopremium]} text="Amigos"/>
-            <Button img={require("../../assets/img/star.png")} styles={[styles.image,styles.nopremium]} text="Logros"/>
-            <Button img={require("../../assets/img/logout.png")} styles={[styles.image,styles.nopremium]} text="Cerrar sesión"/>
+            <Button img={require("../../assets/img/friends.png")} styles={[styles.image,style.nopremium]} text="Amigos"/>
+            <Button img={require("../../assets/img/star.png")} styles={[styles.image,style.nopremium]} text="Logros"/>
+            <Button img={require("../../assets/img/logout.png")} styles={[styles.image,style.nopremium]} text="Cerrar sesión"/>
 
         </View>
     </>

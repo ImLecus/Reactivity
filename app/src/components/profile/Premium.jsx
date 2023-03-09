@@ -1,7 +1,6 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
 import {Paragraph} from "../basic/Components"
 import * as Theme from "../../data/theme"
-
 const styles = StyleSheet.create({
     listItem : {
         borderBottomWidth: 1,

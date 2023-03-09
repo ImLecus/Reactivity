@@ -1,10 +1,10 @@
 import { View, ScrollView } from "react-native";
 import {Whitespace, Paragraph, Subtitle} from "../basic/Components"
-export default function Stats(props){
+export default function Stats({active}){
     return(
         <ScrollView>
 
-            <View style={{display: (props.active == 1 ? "flex" : "none")  , marginTop: 30} }>
+            <View style={{display: (active == 1 ? "flex" : "none")  , marginTop: 30} }>
 
                 <Subtitle text="General" />
 

@@ -1,21 +1,20 @@
 import { View } from "react-native"
 import Cache from "../../data/cache.json"
-import { Button } from "../basic/Buttons"
 import Header from "../extras/Header"
 import Overview from "./Overview"
 import Stats from "./Stats"
-import { useState } from "react"
-import * as Theme from "../../data/theme"
-import {Title, Paragraph, Whitespace} from "../basic/Components"
+import { useContext, useState } from "react"
+import {Title, Paragraph, Whitespace, Button} from "../basic/Components"
+import {Context} from "../extras/PageManager"
 
-export default function Home(props){
+export default function Home({action}){
     const [page,setPage] = useState(0)
     return(
     <>
         {
             // Header que lleva al menú
         }
-        <Header id={0} action={props.action}/>
+        <Header id={0} action={action}/>
 
         <View style={{padding: 30, marginTop: 70}}>
 

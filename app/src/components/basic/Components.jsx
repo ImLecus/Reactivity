@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import * as Theme from "../../data/theme"
 import { style } from "../stylesheet"
 export const Paragraph = ({text, color, opacity}) => (
@@ -28,4 +28,11 @@ export const Page = (props) => (
 )
 export const Whitespace = ({height}) => (
     <View style={{width: 1, height:  height? height:20}}/>
+)
+export const Button = ({action, active, text, page}) => (
+    <TouchableOpacity onPress={action}>
+        <View style={[style.button,{backgroundColor: active == page ? Theme.colors[Theme.colorTheme].main : "#00000000"}]}>
+            <Text style={{color : Theme.colors[Theme.colorTheme].text, fontWeight: "bold" }}>{text}</Text>
+        </View>
+    </TouchableOpacity>
 )

@@ -14,5 +14,33 @@ export const style = StyleSheet.create({
         fontFamily: "JosefinSans",
         fontSize: 24,
         fontWeight: "bold"
+    },
+    button : {
+        padding :5,
+        borderRadius: 20,
+        paddingLeft: 20, 
+        paddingRight: 20,
+        margin: 5, 
+        marginBottom: 15
+    },
+    header : {
+        width: "100%",
+        position: "absolute",
+        top: 0,
+        padding: 30,
+        flexDirection: "row",
+        justifyContent :"space-between",
+        alignItems: "center"
+    },
+    profile: {
+        width: 35,
+        height: 35,
+        borderRadius: 50
+    },
+    premium : {
+        tintColor: Theme.colors[Theme.colorTheme].main
+    },
+    nopremium : {
+        tintColor: Theme.colors[Theme.colorTheme].text + "aa"
     }
 })
