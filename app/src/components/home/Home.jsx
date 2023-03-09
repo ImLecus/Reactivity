@@ -1,11 +1,11 @@
-import { View } from "react-native"
+import { View, TouchableOpacity} from "react-native"
 import Cache from "../../data/cache.json"
 import Header from "../extras/Header"
 import Overview from "./Overview"
 import Stats from "./Stats"
 import { useState } from "react"
 import { Title, Paragraph, Whitespace, Button } from "../basic/Components"
-export default function Home(){
+export default function Home({navigation}){
 
     const [page,setPage] = useState(0)
     return(
@@ -13,8 +13,7 @@ export default function Home(){
         {
             // Header que lleva al menú
         }
-        <Header id={0}/>
-
+        <Header navigation={navigation} id={0}/>
         <View style={{padding: 30, marginTop: 70}}>
 
             <Title text={"Bienvenido de nuevo, " + Cache.user.username +"."}/>

@@ -5,14 +5,13 @@ import {theme} from "../../data/theme"
 import { style } from "../stylesheet";
 import { ThemeContext } from "../UserContext";
 
-export default function Header({id}){
+export default function Header({id,navigation}){
 
     const colorTheme = useContext(ThemeContext)
 
     let date = new Date();
     let titles = [
-        Language.days[date.getDay()] + date.getDate() + Language.months[date.getMonth()],
-        "Perfil"
+        Language.days[date.getDay()] + date.getDate() + Language.months[date.getMonth()]
     ]
     return(
         <>
@@ -26,7 +25,7 @@ export default function Header({id}){
 
                 <Text style={{fontFamily : "Inter", color:theme[colorTheme].text}}>{titles[id]}</Text>
 
-                <TouchableOpacity  style={{opacity: id == 1? 0 : 1}}>
+                <TouchableOpacity onPress={()=>navigation.navigate("Profile")}>
                     <Image source={require("../../assets/img/me.jpg")} style={style.profile}/>
                 </TouchableOpacity>
 

@@ -25,8 +25,8 @@ export default function PageManager(){
                        <NavigationContainer>
                             <Stack.Navigator> 
 
-                                <Stack.Screen name="Home" component={Home}/>
-                                <Stack.Screen name="Perfil" component={Profile}/>
+                                <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
+                                <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
 
                             </Stack.Navigator>
                         </NavigationContainer>

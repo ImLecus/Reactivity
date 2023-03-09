@@ -18,7 +18,7 @@ export const Button = ({img, styles, text,listItem}) => (
     </TouchableOpacity>
 )
 
-export default function Profile(){
+export default function Profile({navigation}){
     const colorTheme = useContext(ThemeContext)
     const styles = StyleSheet.create({
     listItem : {
@@ -40,7 +40,7 @@ export default function Profile(){
     <>
         <View style={style.header}>
 
-            <TouchableOpacity >
+            <TouchableOpacity onPress={()=>navigation.navigate("Home")}>
 
                 <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: theme[colorTheme].text}}/>
             
