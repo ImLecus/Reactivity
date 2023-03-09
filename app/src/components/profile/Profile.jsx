@@ -1,31 +1,15 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
 import {Title, Paragraph, Whitespace} from "../basic/Components"
 import Cache from "../../data/cache.json"
-import * as Theme from "../../data/theme"
 import {theme} from "../../data/theme"
 import { style } from "../stylesheet"
 import { useContext } from "react"
+import { ThemeContext } from "../UserContext"
 
-const styles = StyleSheet.create({
-    listItem : {
-        borderBottomWidth: 1,
-        borderBottomColor: theme[Theme.colorTheme].text + "55",
-        padding: 15, flexDirection: "row", alignItems: "center"
-    },
-    image: {
-        width: 25, height: 25, marginRight: 10
-    },
-    premium : {
-        tintColor: theme[Theme.colorTheme].main
-    },
-    nopremium : {
-        tintColor: theme[Theme.colorTheme].text + "aa"
-    }
-})
 
-export const Button = ({img, styles, text}) => (
+export const Button = ({img, styles, text,listItem}) => (
 
-    <TouchableOpacity style={styles.listItem}>
+    <TouchableOpacity style={listItem}>
 
         <Image source={img} style={styles}/>
 
@@ -34,18 +18,35 @@ export const Button = ({img, styles, text}) => (
     </TouchableOpacity>
 )
 
-export default function Profile({premium}){
+export default function Profile(){
+    const colorTheme = useContext(ThemeContext)
+    const styles = StyleSheet.create({
+    listItem : {
+        borderBottomWidth: 1,
+        borderBottomColor: theme[colorTheme].text + "55",
+        padding: 15, flexDirection: "row", alignItems: "center"
+    },
+    image: {
+        width: 25, height: 25, marginRight: 10
+    },
+    premium : {
+        tintColor: theme.main
+    },
+    nopremium : {
+        tintColor: theme[colorTheme].text + "aa"
+    }
+})
     return(
     <>
         <View style={style.header}>
 
             <TouchableOpacity >
 
-                <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: theme[Theme.colorTheme].text}}/>
+                <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: theme[colorTheme].text}}/>
             
             </TouchableOpacity>
 
-            <Text style={{fontFamily : "Inter", color: theme[Theme.colorTheme].text}}>Perfil</Text>
+            <Text style={{fontFamily : "Inter", color: theme[colorTheme].text}}>Perfil</Text>
 
             <TouchableOpacity style={{opacity: 0}}>
 
@@ -65,24 +66,24 @@ export default function Profile({premium}){
 
             <Whitespace />
 
-            <TouchableOpacity style={{borderRadius: 5, borderWidth: 1, borderColor: theme[Theme.colorTheme].text + "77", padding: 8, paddingLeft: 16, paddingRight: 16}}>
+            <TouchableOpacity style={{borderRadius: 5, borderWidth: 1, borderColor: theme[colorTheme].text + "77", padding: 8, paddingLeft: 16, paddingRight: 16}}>
                 <Paragraph text="Editar perfil"/>
             </TouchableOpacity>
 
             <Whitespace height={50}/>
 
-            <TouchableOpacity style={styles.listItem} onPress={premium}>
+            <TouchableOpacity style={styles.listItem}>
 
                 <Image source={require("../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
 
-                <Paragraph text="Premium" color={theme[Theme.colorTheme].main}/>
+                <Paragraph text="Premium" color={theme.main}/>
 
             </TouchableOpacity>
 
 
-            <Button img={require("../../assets/img/friends.png")} styles={[styles.image,styles.nopremium]} text="Amigos"/>
-            <Button img={require("../../assets/img/star.png")} styles={[styles.image,styles.nopremium]} text="Logros"/>
-            <Button img={require("../../assets/img/logout.png")} styles={[styles.image,styles.nopremium]} text="Cerrar sesión"/>
+            <Button img={require("../../assets/img/friends.png")} styles={[styles.image,styles.nopremium]} text="Amigos" listItem={styles.listItem}/>
+            <Button img={require("../../assets/img/star.png")} styles={[styles.image,styles.nopremium]} text="Logros" listItem={styles.listItem}/>
+            <Button img={require("../../assets/img/logout.png")} styles={[styles.image,styles.nopremium]} text="Cerrar sesión" listItem={styles.listItem}/>
 
         </View>
     </>

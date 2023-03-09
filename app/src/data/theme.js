@@ -16,24 +16,18 @@ export var theme = {
     light : {
         bg : "#edf2f4",
         complementary: "#222222",
-        red: "#ef233c",
-        orange: "#fb8500",
-        green:"#76c893",
-        purple:"#9381ff",
-        gray: "#cccccc",
         text: "#444444",
-        main: "#ffb703"
     },
     dark : {
         bg: "#333333",
         complementary: "#edf2f4",
-        red: "#ef233c",
-        green:"#76c893",
-        orange: "#fb8500",
-        purple:"#9381ff",
-        gray: "#cccccc",
         text: "#edf2f4",
-        main: "#ffb703",
     },
-    transparent: "#00000000"
+    transparent: "#00000000",
+    main: "#ffb703",
+    red: "#ef233c",
+    orange: "#fb8500",
+    green:"#76c893",
+    purple:"#9381ff",
+    gray: "#cccccc"
 }

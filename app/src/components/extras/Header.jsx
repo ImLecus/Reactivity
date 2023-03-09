@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import { View, Image, Text, TouchableOpacity, Alert } from "react-native";
+import { View, Image, Text, TouchableOpacity } from "react-native";
 import Language from "../../data/language.json"
-import * as Theme from "../../data/theme"
 import {theme} from "../../data/theme"
 import { style } from "../stylesheet";
 import { ThemeContext } from "../UserContext";

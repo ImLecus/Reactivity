@@ -1,18 +1,15 @@
-import {View} from "react-native"
+import { View } from "react-native"
 import Cache from "../../data/cache.json"
 import Header from "../extras/Header"
 import Overview from "./Overview"
 import Stats from "./Stats"
-import { useState, useContext } from "react"
-import {Title, Paragraph, Whitespace, Button} from "../basic/Components"
-import { ThemeContext } from "../UserContext"
-import {theme} from "../../data/theme"
+import { useState } from "react"
+import { Title, Paragraph, Whitespace, Button } from "../basic/Components"
 export default function Home(){
 
-    const colorTheme = useContext(ThemeContext)
     const [page,setPage] = useState(0)
     return(
-    <View style={{backgroundColor: theme[colorTheme].bg}}>
+    <>
         {
             // Header que lleva al menú
         }
@@ -43,7 +40,7 @@ export default function Home(){
 
         </View>     
 
-    </View>
+    </>
     
     )
 }

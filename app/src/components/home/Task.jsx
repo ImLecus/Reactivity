@@ -1,7 +1,6 @@
 import { View, Image, TouchableWithoutFeedback } from "react-native";
-import * as Theme from "../../data/theme"
-import {theme} from "../../data/theme"
-import {Paragraph} from "../basic/Components";
+import { theme, icons } from "../../data/theme"
+import { Paragraph } from "../basic/Components";
 import { useState } from "react"
 import { ThemeContext } from "../UserContext";
 import { useContext } from "react";
@@ -19,9 +18,9 @@ export default function Task (props) {
             
             <View style={{flexDirection: "row", alignItems: "center"}}>
 
-                <View style={{width: 40, height: 40, backgroundColor: theme[colorTheme].main, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
+                <View style={{width: 40, height: 40, backgroundColor: theme.main, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
                     
-                    <Image source={Theme.icons[props.icon]} style={{tintColor: "white", width: 30, height: 30}}/>
+                    <Image source={icons[props.icon]} style={{tintColor: "white", width: 30, height: 30}}/>
                 
                 </View>
 

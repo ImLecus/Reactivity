@@ -1,14 +1,16 @@
 import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import Task from "./Task";
 import ProgressBar from "../basic/ProgressBar";
-import * as Theme from "../../data/theme"
-import {theme} from "../../data/theme"
+import { theme, icons } from "../../data/theme"
 import { Subtitle, Whitespace, Paragraph } from "../basic/Components";
 import { ThemeContext } from "../UserContext";
 import Cache from "../../data/cache.json"
 import { useContext } from "react";
+
 export default function Overview (props) {
+
     const colorTheme = useContext(ThemeContext)
+
     let date = new Date()
     let todayTasks = []
     let completedTasks = 0
@@ -23,7 +25,9 @@ export default function Overview (props) {
                         todayTasks.push(task)
                     }})
     
+
     let progress = 100 * completedTasks / (todayTasks.length + 1)
+
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
 
@@ -63,7 +67,7 @@ export default function Overview (props) {
 
                             <View style={{width: 40, height: 40, backgroundColor: theme.transparent, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
                     
-                                <Image source={Theme.icons.add} style={{tintColor: theme[colorTheme].complementary + "aa", width: 30, height: 30}}/>
+                                <Image source={icons.add} style={{tintColor: theme[colorTheme].complementary + "aa", width: 30, height: 30}}/>
                 
                             </View>
 

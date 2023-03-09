@@ -22,7 +22,7 @@ export default function Stats({active}){
 
                 <Subtitle text={"Estado de ánimo"}/>
 
-                <Whitespace height={500}/>
+                <Whitespace h={500}/>
 
             </View>
             
