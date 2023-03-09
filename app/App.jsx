@@ -6,6 +6,8 @@ import PageManager from './src/components/extras/PageManager';
 
 import * as Theme from "./src/data/theme"
 
+
+
 export default function App() {
 
   const [fontsloaded] = Font.useFonts({
