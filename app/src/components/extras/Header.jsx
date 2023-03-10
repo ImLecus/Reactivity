@@ -11,13 +11,15 @@ export default function Header({id,navigation}){
 
     let date = new Date();
     let titles = [
-        Language.days[date.getDay()] + date.getDate() + Language.months[date.getMonth()]
+        Language.days[date.getDay()] + date.getDate() + Language.months[date.getMonth()],
+        "Notas diarias",
+        "Calificaciones"
     ]
     return(
         <>
             <View style={style.header}>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate("Califications")}>
 
                     <Image source={require("../../assets/img/menu.png")} style={{width: 35, height: 35, tintColor:theme[colorTheme].text}}/>
                 

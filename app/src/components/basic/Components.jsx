@@ -4,12 +4,13 @@ import { ThemeContext } from "../UserContext";
 import { style } from "../stylesheet"
 import { useContext } from "react";
 
-export const Paragraph = ({text, color, opacity}) => {
+export const Paragraph = ({text, color, opacity, bold}) => {
     const colorTheme = useContext(ThemeContext)
     return(
         <Text style={[style.p, {
             color: color ? color : theme[colorTheme].text,
-            opacity: opacity ? opacity : 0.7
+            opacity: opacity ? opacity : 0.7,
+            fontWeight: bold? "bold" : "normal" 
         }]}>
             {text}
         </Text>
@@ -45,4 +46,11 @@ export const Button = ({action, active, text, page}) => {
         </View>
     </TouchableOpacity>
     )
+}
+export const Line = () => {
+    const colorTheme = useContext(ThemeContext)
+    return(
+        <View style={{height: 1, minWidth: 20, backgroundColor: theme[colorTheme].text + "44"}}/>
+    )
+   
 }

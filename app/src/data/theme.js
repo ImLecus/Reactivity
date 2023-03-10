@@ -29,5 +29,12 @@ export var theme = {
     orange: "#fb8500",
     green:"#76c893",
     purple:"#9381ff",
-    gray: "#cccccc"
+    gray: "#cccccc",
+    mood: {
+        awful: "#d62828",
+        bad : "#e85d04",
+        mid : "#ffbe0b",
+        good : "#aacc00",
+        excellent :"#55a630"
+    }
 }

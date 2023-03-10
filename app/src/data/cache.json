@@ -28,6 +28,29 @@
             "repeat":[0,2,4,6]
         }
 
+    ],
+    "califications":[
+        {
+            "note":"5.8",
+            "category":"Castellano",
+            "date":"23 de octubre"
+        },
+        {
+            "note":"7.7",
+            "category":"Matemáticas",
+            "date":"21 de octubre"
+        },
+        {
+            "note":"9",
+            "category":"Filosofía",
+            "date":"19 de octubre"
+        },
+        {
+            "note":"10",
+            "category":"Francés",
+            "date":"2 de noviembre"
+        }
+
     ]
     
 }
