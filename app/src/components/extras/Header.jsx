@@ -19,7 +19,7 @@ export default function Header({id,navigation}){
         <>
             <View style={style.header}>
 
-                <TouchableOpacity onPress={()=>navigation.navigate("Journal")}>
+                <TouchableOpacity onPress={()=>navigation.navigate("Califications")}>
 
                     <Image source={require("../../assets/img/menu.png")} style={{width: 35, height: 35, tintColor:theme[colorTheme].text}}/>
                 

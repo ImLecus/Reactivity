@@ -7,14 +7,14 @@ import { Paragraph, Line } from "../basic/Components"
 export default function Califications({navigation}){
     return(
     <>
-        <Header navigation={navigation} id={2}/>
+        <Header navigation={navigation} id={2} />
         <ScrollView style={{padding: 30, marginTop: 70}}>
             {
                 Cache.califications.map(calification => (
-                    <Calification note={calification.note} category={calification.category} date={calification.date}/>
+                    <Calification note={calification.note} category={calification.category} date={calification.date} id={Cache.califications.indexOf(calification)}/>
                 ))
             }
-            <Line />
+            <Line w={"100%"} opacity={0.1}/>
             <TouchableOpacity style={{flexDirection:"row", alignItems: "center", width: "100%", marginTop: 20}}>
                 <Image source={icons.add} style={{marginRight: 20, opacity: 0.6}}/>
                 <Paragraph text={"Nueva calificación..."}/>

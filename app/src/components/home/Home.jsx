@@ -1,4 +1,4 @@
-import { View, TouchableOpacity} from "react-native"
+import { View } from "react-native"
 import Cache from "../../data/cache.json"
 import Header from "../extras/Header"
 import Overview from "./Overview"
@@ -10,9 +10,6 @@ export default function Home({navigation}){
     const [page,setPage] = useState(0)
     return(
     <>
-        {
-            // Header que lleva al menú
-        }
         <Header navigation={navigation} id={0}/>
         <View style={{padding: 30, marginTop: 70}}>
 
@@ -34,8 +31,8 @@ export default function Home({navigation}){
                 <Overview active={page}/>
                 
                 <Stats active={page}/>
+                
             </View>
-
 
         </View>     
 

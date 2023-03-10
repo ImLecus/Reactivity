@@ -16,7 +16,7 @@ export var icons = {
         mid: require("../assets/img/mood/mid.png"),
         bad: require("../assets/img/mood/bad.png"),
         awful: require("../assets/img/mood/awful.png"),
-        missing: require("../assets/img/mood/missing")
+        missing: require("../assets/img/mood/missing.png")
     }
 }
 export var theme = {
@@ -42,6 +42,7 @@ export var theme = {
         bad : "#e85d04",
         mid : "#ffbe0b",
         good : "#aacc00",
-        excellent :"#55a630"
+        excellent :"#55a630",
+        missing: "#00000044"
     }
 }

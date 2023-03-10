@@ -9,7 +9,7 @@ export default function Calification({note, category, date}){
             "awful"
     return(
     <View style={{flexDirection: "row"}}>
-        <View style={{ marginBottom: 20 , width: 60, height: 60, borderRadius: 50, backgroundColor: theme.mood[color], justifyContent: "center", alignItems: "center"}}>
+        <View style={{elevation: 1, marginBottom: 20 , width: 60, height: 60, borderRadius: 50, backgroundColor: theme.mood[color], justifyContent: "center", alignItems: "center"}}>
             <Paragraph text={note} color={"white"} opacity={1}/>
         </View>
         <View style={{marginLeft: 20, marginTop: 5}}>

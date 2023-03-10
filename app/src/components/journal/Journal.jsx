@@ -13,7 +13,7 @@ export default function Journal({navigation}){
         <View style={{padding: 30, marginTop: 70}}>
             {
                 Cache.journal.map(note => (
-                    <Note date={note.date} mood={note.mood} message={note.message}/>
+                    <Note date={note.date} mood={note.mood} message={note.message} id={Cache.journal.indexOf(note)}/>
                 ))
             }
         </View>     

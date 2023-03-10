@@ -61,6 +61,11 @@
             "date":"4/3/2023",
             "mood":"mid",
             "message":"Este es un mensaje de prueba para probar la nueva funcionalidad de journaling de la app Reactivity."
+        },
+        {
+            "date":"4/3/2023",
+            "mood":"missing",
+            "message":"Este es un mensaje de prueba para probar la nueva funcionalidad de journaling de la app Reactivity."
         }
     ]
     

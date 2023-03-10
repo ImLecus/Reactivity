@@ -1,5 +1,5 @@
 import { Text, View, TouchableOpacity } from "react-native";
-import { theme } from "../../data/theme"
+import { theme, lightColors } from "../../data/theme"
 import { ThemeContext } from "../UserContext";
 import { style } from "../stylesheet"
 import { useContext } from "react";
@@ -53,4 +53,22 @@ export const Line = ({w, opacity}) => {
         <View style={{height: 1, width: w? w : 20, backgroundColor: theme[colorTheme].text, opacity: opacity? opacity: 0.4}}/>
     )
    
+}
+export const ProgressBar =  ({width, color, progress}) => {
+    return(
+        <View style={{
+                width:  width ? width :  "70%",
+                borderRadius: 10, 
+                height: 15, 
+                backgroundColor: lightColors.main,
+                marginTop: 10
+            }}>
+            <View style={{
+                width : (progress + "%"), 
+                backgroundColor: color ? color :  theme.main,
+                height: "100%", borderRadius: 10
+                }}>
+            </View>
+        </View>
+    )
 }
