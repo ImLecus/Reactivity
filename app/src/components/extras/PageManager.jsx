@@ -6,7 +6,7 @@ import Journal from "../journal/Journal"
 import Califications from "../califications/Califications";
 
 import { ThemeContext } from "../UserContext";
-import { theme } from "../../data/theme";
+import theme from "../../data/theme.json";
 
 import { View } from "react-native";
 import Cache from "../../data/cache.json"

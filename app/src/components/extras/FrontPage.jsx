@@ -1,5 +1,5 @@
 import { View, TouchableWithoutFeedback, Alert } from "react-native";
-import { theme } from "../../data/theme";
+import theme from "../../data/theme.json";
 import { useContext } from "react";
 import { ThemeContext } from "../UserContext";
 export default function FrontPage({open, w, h}){

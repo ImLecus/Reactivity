@@ -1,0 +1,80 @@
+{
+    "light" : {
+
+        "bg" :              "#edf2f4",
+        "complementary":    "#222222",
+        "text":             "#444444",
+        "transparent":      "#00000000",
+        "main":             "#ffb703",
+
+        "red":              "#ef233c",
+        "orange":           "#fb8500",
+        "yellow":           "#ffb703",
+        "green":            "#76c893",
+        "blue":             "#219ebc",
+        "purple":           "#9381ff",
+        "pink":             "#ef476f",
+        "gray":             "#cccccc",
+
+        "lightColors" : {
+            "red":          "#ff8296",
+            "orange":       "#ffa743",
+            "yellow":       "#ffe499",
+            "green":        "#d9ed92",
+            "blue":         "#67d7f1",
+            "purple":       "#b8b8ff",
+            "pink":         "#f27a96",
+            "gray":         "#cccccc",
+
+            "main":         "#ffe499"
+        },
+
+        "mood": {
+            "awful":        "#d62828",
+            "bad" :         "#e85d04",
+            "mid" :         "#ffbe0b",
+            "good" :        "#aacc00",
+            "excellent" :   "#55a630",
+            "missing":      "#00000044"
+        }
+    },
+    "dark" : {
+
+        "bg":               "#333333",
+        "complementary":    "#edf2f4",
+        "text":             "#edf2f4",
+        "transparent":      "#00000000",
+        "main":             "#ffb703",
+
+        "red":              "#ef233c",
+        "orange":           "#fb8500",
+        "yellow":           "#ffb703",
+        "green":            "#76c893",
+        "blue":             "#219ebc",
+        "purple":           "#9381ff",
+        "pink":             "#ef476f",
+        "gray":             "#cccccc",
+
+        "lightColors" : {
+            "red":          "#ff8296",
+            "orange":       "#ffa743",
+            "yellow":       "#ffe499",
+            "green":        "#d9ed92",
+            "blue":         "#67d7f1",
+            "purple":       "#b8b8ff",
+            "pink":         "#f27a96",
+            "gray":         "#cccccc",
+
+            "main":         "#ffe499"
+        },
+
+        "mood": {
+            "awful":        "#d62828",
+            "bad" :         "#e85d04",
+            "mid" :         "#ffbe0b",
+            "good" :        "#aacc00",
+            "excellent" :   "#55a630",
+            "missing":      "#00000044"
+        }
+    }
+}

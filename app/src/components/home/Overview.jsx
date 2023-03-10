@@ -1,11 +1,11 @@
 import { View, ScrollView, Image, TouchableOpacity } from "react-native";
 import Task from "./Task";
-import { theme, icons } from "../../data/theme"
+import theme from "../../data/theme.json"
 import { Subtitle, Whitespace, Paragraph, ProgressBar } from "../basic/Components";
 import { ThemeContext } from "../UserContext";
 import Cache from "../../data/cache.json"
 import { useContext } from "react";
-
+import { icons } from "../../data/icons"
 export default function Overview (props) {
 
     const colorTheme = useContext(ThemeContext)

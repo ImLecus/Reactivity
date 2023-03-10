@@ -1,7 +1,7 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
 import {Title, Paragraph, Whitespace} from "../basic/Components"
 import Cache from "../../data/cache.json"
-import {theme} from "../../data/theme"
+import theme from "../../data/theme.json"
 import { style } from "../stylesheet"
 import { useContext } from "react"
 import { ThemeContext } from "../UserContext"
@@ -30,7 +30,7 @@ export default function Profile({navigation}){
         width: 25, height: 25, marginRight: 10
     },
     premium : {
-        tintColor: theme.main
+        tintColor: theme[colorTheme].main
     },
     nopremium : {
         tintColor: theme[colorTheme].text + "aa"
@@ -76,7 +76,7 @@ export default function Profile({navigation}){
 
                 <Image source={require("../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
 
-                <Paragraph text="Premium" color={theme.main}/>
+                <Paragraph text="Premium" color={theme[colorTheme].main}/>
 
             </TouchableOpacity>
 

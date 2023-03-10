@@ -1,5 +1,5 @@
 import { Text, View, TouchableOpacity } from "react-native";
-import { theme, lightColors } from "../../data/theme"
+import theme from "../../data/theme.json"
 import { ThemeContext } from "../UserContext";
 import { style } from "../stylesheet"
 import { useContext } from "react";
@@ -41,7 +41,7 @@ export const Button = ({action, active, text, page}) => {
     const colorTheme = useContext(ThemeContext)
     return(
     <TouchableOpacity onPress={action}>
-        <View style={[style.button,{backgroundColor: active == page ? theme.main : "#00000000"}]}>
+        <View style={[style.button,{backgroundColor: active == page ? theme[colorTheme].main : "#00000000"}]}>
             <Text style={{color : theme[colorTheme].text, fontWeight: "bold" }}>{text}</Text>
         </View>
     </TouchableOpacity>
@@ -55,17 +55,18 @@ export const Line = ({w, opacity}) => {
    
 }
 export const ProgressBar =  ({width, color, progress}) => {
+    const colorTheme = useContext(ThemeContext)
     return(
         <View style={{
                 width:  width ? width :  "70%",
                 borderRadius: 10, 
                 height: 15, 
-                backgroundColor: lightColors.main,
+                backgroundColor: theme[colorTheme].lightColors.main,
                 marginTop: 10
             }}>
             <View style={{
                 width : (progress + "%"), 
-                backgroundColor: color ? color :  theme.main,
+                backgroundColor: color ? color :  theme[colorTheme].main,
                 height: "100%", borderRadius: 10
                 }}>
             </View>

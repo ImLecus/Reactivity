@@ -1,5 +1,6 @@
 import { View, Image, TouchableWithoutFeedback } from "react-native";
-import { theme, icons } from "../../data/theme"
+import theme from "../../data/theme.json"
+import { icons } from "../../data/icons"
 import { Paragraph } from "../basic/Components";
 import { useState } from "react"
 import { ThemeContext } from "../UserContext";
@@ -11,14 +12,14 @@ export default function Task (props) {
         <View style={
             {
             width: "100%", minHeight: 60,
-            backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), 
+            backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme[colorTheme].transparent), 
             borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
 
         <View style={{flexDirection: "row", alignItems:"center", justifyContent: "space-between"}}>
             
             <View style={{flexDirection: "row", alignItems: "center"}}>
 
-                <View style={{width: 40, height: 40, backgroundColor: theme.main, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
+                <View style={{width: 40, height: 40, backgroundColor: theme[colorTheme].main, borderRadius: 5, opacity: 1, justifyContent: "center", alignItems: "center"}}>
                     
                     <Image source={icons[props.icon]} style={{tintColor: "white", width: 30, height: 30}}/>
                 
