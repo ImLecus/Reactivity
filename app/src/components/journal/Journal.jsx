@@ -6,9 +6,6 @@ export default function Journal({navigation}){
 
     return(
     <>
-        {
-            // Header que lleva al menú
-        }
         <Header navigation={navigation} id={1}/>
         <View style={{padding: 30, marginTop: 70}}>
             {

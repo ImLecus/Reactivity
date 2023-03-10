@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { icons } from "../../data/icons"
 export default function Overview (props) {
 
-    const colorTheme = useContext(ThemeContext)
+    const [colorTheme,setTheme] = useContext(ThemeContext)
 
     let date = new Date()
     let todayTasks = []
@@ -60,7 +60,7 @@ export default function Overview (props) {
                     ))
                 }
 
-                <TouchableOpacity onPress={() => {}} style={{width: "100%", minHeight: 60, backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
+                <TouchableOpacity onPress={() => {setTheme("dark")}} style={{width: "100%", minHeight: 60, backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
                     
                         <View style={{flexDirection: "row", alignItems: "center"}}>
 

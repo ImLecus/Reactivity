@@ -6,7 +6,7 @@ import { useState } from "react"
 import { ThemeContext } from "../UserContext";
 import { useContext } from "react";
 export default function Task (props) {
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     const [open,setOpen] = useState(false)
     return(
         <View style={

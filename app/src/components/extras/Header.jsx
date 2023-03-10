@@ -7,7 +7,7 @@ import { ThemeContext } from "../UserContext";
 
 export default function Header({id,navigation}){
 
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
 
     let date = new Date();
     let titles = [
@@ -17,7 +17,7 @@ export default function Header({id,navigation}){
     ]
     return(
         <>
-            <View style={style.header}>
+            <View style={[style.header]}>
 
                 <TouchableOpacity onPress={()=>navigation.navigate("Califications")}>
 

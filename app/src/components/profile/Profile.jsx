@@ -19,7 +19,7 @@ export const Button = ({img, styles, text,listItem}) => (
 )
 
 export default function Profile({navigation}){
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     const styles = StyleSheet.create({
     listItem : {
         borderBottomWidth: 1,
@@ -38,7 +38,7 @@ export default function Profile({navigation}){
 })
     return(
     <>
-        <View style={style.header}>
+        <View style={[style.header, {}]}>
 
             <TouchableOpacity onPress={()=>navigation.navigate("Home")}>
 

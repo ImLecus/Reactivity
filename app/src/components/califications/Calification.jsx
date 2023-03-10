@@ -4,7 +4,7 @@ import theme from "../../data/theme.json"
 import { useContext } from "react"
 import { ThemeContext } from "../UserContext"
 export default function Calification({note, category, date}){
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     let color = note >= 8 ? "excellent" :
             note >= 6 ? "good" :
             note >= 4 ? "mid" :

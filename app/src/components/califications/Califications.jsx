@@ -5,8 +5,11 @@ import Calification from "./Calification"
 import { icons } from "../../data/icons"
 import { Paragraph, Line } from "../basic/Components"
 import FrontPage from "../extras/FrontPage"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { ThemeContext } from "../UserContext"
+import theme from "../../data/theme.json"
 export default function Califications({navigation}){
+    const colorTheme = useContext(ThemeContext)[0]
     const [open,setOpen] = useState(false)
     return(
     <>
@@ -20,7 +23,7 @@ export default function Califications({navigation}){
             }
             <Line w={"100%"} opacity={0.1}/>
             <TouchableOpacity style={{flexDirection:"row", alignItems: "center", width: "100%", marginTop: 20}} onPress={() => {setOpen(true)}}>
-                <Image source={icons.add} style={{marginRight: 20, opacity: 0.6}}/>
+                <Image source={icons.add} style={{marginRight: 20, tintColor: theme[colorTheme].gray}}/>
                 <Paragraph text={"Nueva calificación..."}/>
             </TouchableOpacity>
         </ScrollView>     

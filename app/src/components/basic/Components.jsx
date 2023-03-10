@@ -5,7 +5,7 @@ import { style } from "../stylesheet"
 import { useContext } from "react";
 
 export const Paragraph = ({text, color, opacity, bold}) => {
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     return(
         <Text style={[style.p, {
             color: color ? color : theme[colorTheme].text,
@@ -17,7 +17,7 @@ export const Paragraph = ({text, color, opacity, bold}) => {
     )
 }
 export const Subtitle = ({text, color, opacity}) => {
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     return(
         <Text style={[ style.subtitle , {
             color: color ? color : theme[colorTheme].text,
@@ -27,7 +27,7 @@ export const Subtitle = ({text, color, opacity}) => {
     )
 }
 export const Title = ({text}) => {
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     return(
         <Text style={[style.title, { color: theme[colorTheme].text}]}>
             {text}
@@ -38,7 +38,7 @@ export const Whitespace = ({h}) => (
     <View style={{width: 20, height: (h? h : 20)}}/>
 )
 export const Button = ({action, active, text, page}) => {
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     return(
     <TouchableOpacity onPress={action}>
         <View style={[style.button,{backgroundColor: active == page ? theme[colorTheme].main : "#00000000"}]}>
@@ -48,14 +48,14 @@ export const Button = ({action, active, text, page}) => {
     )
 }
 export const Line = ({w, opacity}) => {
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     return(
         <View style={{height: 1, width: w? w : 20, backgroundColor: theme[colorTheme].text, opacity: opacity? opacity: 0.4}}/>
     )
    
 }
 export const ProgressBar =  ({width, color, progress}) => {
-    const colorTheme = useContext(ThemeContext)
+    const colorTheme = useContext(ThemeContext)[0]
     return(
         <View style={{
                 width:  width ? width :  "70%",

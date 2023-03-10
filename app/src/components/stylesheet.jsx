@@ -3,7 +3,8 @@ import {StyleSheet} from "react-native"
 export const style = StyleSheet.create({
     p : {
         fontFamily: "Inter",
-        fontSize: 18
+        fontSize: 18,
+        zIndex: 10
     },
     title : {
         fontFamily: "JosefinSans",
