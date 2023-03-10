@@ -47,10 +47,10 @@ export const Button = ({action, active, text, page}) => {
     </TouchableOpacity>
     )
 }
-export const Line = () => {
+export const Line = ({w, opacity}) => {
     const colorTheme = useContext(ThemeContext)
     return(
-        <View style={{height: 1, minWidth: 20, backgroundColor: theme[colorTheme].text + "44"}}/>
+        <View style={{height: 1, width: w? w : 20, backgroundColor: theme[colorTheme].text, opacity: opacity? opacity: 0.4}}/>
     )
    
 }

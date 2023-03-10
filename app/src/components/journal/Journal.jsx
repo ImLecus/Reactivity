@@ -1,8 +1,7 @@
 import { View } from "react-native"
 import Cache from "../../data/cache.json"
 import Header from "../extras/Header"
-import { useState } from "react"
-import { Title, Paragraph, Whitespace, Button, Subtitle } from "../basic/Components"
+import Note from "./Note"
 export default function Journal({navigation}){
 
     return(
@@ -12,7 +11,11 @@ export default function Journal({navigation}){
         }
         <Header navigation={navigation} id={1}/>
         <View style={{padding: 30, marginTop: 70}}>
-            <Paragraph text="9 de marzo"/>
+            {
+                Cache.journal.map(note => (
+                    <Note date={note.date} mood={note.mood} message={note.message}/>
+                ))
+            }
         </View>     
 
     </>
