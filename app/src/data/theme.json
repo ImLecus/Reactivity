@@ -26,7 +26,8 @@
             "pink":         "#f27a96",
             "gray":         "#cccccc",
 
-            "main":         "#ffe499"
+            "main":         "#ffe499",
+            "bg":           "#f2f8fa"
         },
 
         "mood": {
@@ -65,7 +66,8 @@
             "pink":         "#f27a96",
             "gray":         "#cccccc",
 
-            "main":         "#ffe499"
+            "main":         "#ffe499",
+            "bg":           "#666666"
         },
 
         "mood": {

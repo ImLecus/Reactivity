@@ -30,7 +30,7 @@ export default function Overview (props) {
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
 
-            <View style={{display: (props.active == 0 ? "flex" : "none")  , marginTop: 30} }>
+            <View style={{display: (props.active == 0 ? "flex" : "none")  , marginTop: 30, padding: 5} }>
 
                 <Subtitle text="Progreso diario" />
 
