@@ -1,5 +1,5 @@
 import { View } from "react-native"
-import {Paragraph} from "../basic/Components"
+import {Paragraph} from "./Components"
 import theme from "../../data/theme.json"
 import { useContext } from "react"
 import { ThemeContext } from "../UserContext"

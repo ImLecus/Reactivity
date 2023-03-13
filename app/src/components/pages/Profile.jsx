@@ -1,15 +1,16 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
-import {Title, Paragraph, Whitespace} from "../basic/Components"
+import {Title, Paragraph, Whitespace} from "../other/Components"
 import Cache from "../../data/cache.json"
 import theme from "../../data/theme.json"
 import { style } from "../stylesheet"
 import { useContext } from "react"
 import { ThemeContext } from "../UserContext"
+import ReturnHeader from "../other/ReturnHeader"
 
 
-export const Button = ({img, styles, text,listItem}) => (
+export const Button = ({img, styles, text,listItem,onpress}) => (
 
-    <TouchableOpacity style={listItem}>
+    <TouchableOpacity style={listItem} onPress={onpress}>
 
         <Image source={img} style={styles}/>
 
@@ -38,23 +39,7 @@ export default function Profile({navigation}){
 })
     return(
     <>
-        <View style={[style.header, {}]}>
-
-            <TouchableOpacity onPress={()=>navigation.navigate("Home")}>
-
-                <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor: theme[colorTheme].text}}/>
-            
-            </TouchableOpacity>
-
-            <Text style={{fontFamily : "Inter", color: theme[colorTheme].text}}>Perfil</Text>
-
-            <TouchableOpacity style={{opacity: 0}}>
-
-                <Image source={require("../../assets/img/me.jpg")} style={style.profile}/>
-
-            </TouchableOpacity>
-
-        </View>
+        <ReturnHeader returnTo={"Home"} title={"Perfil"} navigation={navigation}/>
 
         <View style={{padding: 30, marginTop: 70, alignItems: "center"}}>
 
@@ -81,7 +66,7 @@ export default function Profile({navigation}){
             </TouchableOpacity>
 
 
-            <Button img={require("../../assets/img/friends.png")} styles={[styles.image,styles.nopremium]} text="Amigos" listItem={styles.listItem}/>
+            <Button img={require("../../assets/img/settings.png")} styles={[styles.image,styles.nopremium]} text="Configuración" listItem={styles.listItem} onpress={() => {navigation.navigate("Settings")}}/>
             <Button img={require("../../assets/img/star.png")} styles={[styles.image,styles.nopremium]} text="Logros" listItem={styles.listItem}/>
             <Button img={require("../../assets/img/logout.png")} styles={[styles.image,styles.nopremium]} text="Cerrar sesión" listItem={styles.listItem}/>
 

@@ -1,10 +1,9 @@
 import { View, Image, TouchableWithoutFeedback } from "react-native";
 import theme from "../../data/theme.json"
 import { icons } from "../../data/icons"
-import { Paragraph } from "../basic/Components";
-import { useState } from "react"
+import { Paragraph,Whitespace } from "./Components";
+import { useState, useContext } from "react"
 import { ThemeContext } from "../UserContext";
-import { useContext } from "react";
 export default function Task (props) {
     const colorTheme = useContext(ThemeContext)[0]
     const [open,setOpen] = useState(false)
@@ -48,6 +47,10 @@ export default function Task (props) {
         <View style={{display: (open == true ? "flex" : "none"), marginTop: 20}}>
 
             <Paragraph text={props.description ? props.description : "Esta tarea no tiene descripción."}/>
+            <Whitespace />
+            <View style={{width:"100%", alignItems: "center", backgroundColor:theme[colorTheme].main, padding: 5, borderRadius: 5}}>
+                <Paragraph text={"Completar tarea"} color={ theme[colorTheme].bg} opacity={1}/>
+            </View>
 
         </View>
         

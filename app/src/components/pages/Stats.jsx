@@ -1,5 +1,5 @@
 import { View, ScrollView } from "react-native";
-import {Whitespace, Paragraph, Subtitle} from "../basic/Components"
+import {Whitespace, Paragraph, Subtitle} from "../other/Components"
 export default function Stats({active}){
     return(
         <ScrollView>

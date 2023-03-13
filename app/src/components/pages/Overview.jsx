@@ -1,7 +1,7 @@
 import { View, ScrollView, Image, TouchableOpacity } from "react-native";
-import Task from "./Task";
+import Task from "../other/Task";
 import theme from "../../data/theme.json"
-import { Subtitle, Whitespace, Paragraph, ProgressBar } from "../basic/Components";
+import { Subtitle, Whitespace, Paragraph, ProgressBar } from "../other/Components";
 import { ThemeContext } from "../UserContext";
 import Cache from "../../data/cache.json"
 import { useContext } from "react";

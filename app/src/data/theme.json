@@ -1,7 +1,7 @@
 {
     "light" : {
 
-        "bg" :              "#edf2f4",
+        "bg" :              "#F8F8F8",
         "complementary":    "#222222",
         "text":             "#444444",
         "transparent":      "#00000000",
@@ -27,7 +27,7 @@
             "gray":         "#cccccc",
 
             "main":         "#ffe499",
-            "bg":           "#f2f8fa"
+            "bg":           "#F0F0F0"
         },
 
         "mood": {

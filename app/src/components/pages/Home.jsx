@@ -1,10 +1,10 @@
 import { View } from "react-native"
 import Cache from "../../data/cache.json"
-import Header from "../extras/Header"
+import Header from "../other/Header"
 import Overview from "./Overview"
 import Stats from "./Stats"
 import { useState} from "react"
-import { Title, Paragraph, Whitespace, Button } from "../basic/Components"
+import { Title, Paragraph, Whitespace, Button } from "../other/Components"
 export default function Home({navigation}){
     const [page,setPage] = useState(0)
     return(

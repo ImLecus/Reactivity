@@ -1,7 +1,7 @@
 import { View } from "react-native"
 import Cache from "../../data/cache.json"
-import Header from "../extras/Header"
-import Note from "./Note"
+import Header from "../other/Header"
+import Note from "../other/Note"
 export default function Journal({navigation}){
 
     return(

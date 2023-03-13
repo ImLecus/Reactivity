@@ -1,5 +1,5 @@
 import { View, Image } from "react-native";
-import { Paragraph, Line, Whitespace } from "../basic/Components";
+import { Paragraph, Line, Whitespace } from "./Components";
 import { theme } from "../../data/theme";
 import { icons } from "../../data/icons"
 export default function Note({date,mood,message}){
