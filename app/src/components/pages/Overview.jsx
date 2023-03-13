@@ -6,24 +6,15 @@ import { ThemeContext } from "../UserContext";
 import Cache from "../../data/cache.json"
 import { useContext } from "react";
 import { icons } from "../../data/icons"
+import Streak from "../other/Streak"
 export default function Overview () {
     const [colorTheme,setTheme] = useContext(ThemeContext)
 
-    let date = new Date()
     let todayTasks = []
-    let completedTasks = 0
     Cache.tasks.map(task => {
-                    if(task.completed == (date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear())){
-                        completedTasks ++;
-                    }
-                    else{
-                        task.completed = ""
-                    }
-                    if(task.repeat.includes(date.getDay())){
+                    if(task.repeat.includes(new Date().getDay())){
                         todayTasks.push(task)
                     }})
-
-    let progress = 100 * completedTasks / (todayTasks.length + 1)
 
     return(
         <View>
@@ -34,7 +25,7 @@ export default function Overview () {
 
                 <Whitespace />
 
-                <Paragraph text={"Has completado "+ completedTasks +" de los " + (todayTasks.length + 1)  + " objetivos establecidos para hoy."}/>
+                <Paragraph text={"Has completado 0 de los " + (todayTasks.length + 1)  + " objetivos establecidos para hoy."}/>
 
                 <Whitespace h={30}/>
                 {
@@ -70,6 +61,17 @@ export default function Overview () {
                 <Whitespace />
 
                 <Paragraph text={"¡Enhorabuena! Llevas una racha de 7 días. Fallaste por última vez el 4/3/2023"}/>
+
+                <Whitespace />
+
+                <View style={{flexDirection: "row"}}>
+                    <Streak day={16}/>
+                    <Streak day={17}/>
+                    <Streak day={18}/>
+                    <Streak day={19}/>
+                    <Streak day={20}/>
+                </View>
+                
 
                 <Whitespace h={100}/>
             </View>
