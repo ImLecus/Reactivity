@@ -23,11 +23,11 @@ export default function PageManager(){
         <ThemeContext.Provider value={[colorTheme,setTheme]}>
                 <NavigationContainer  theme={{...DefaultTheme, colors: {...DefaultTheme.colors, background: theme[colorTheme].bg,}}}>
                     <Stack.Navigator> 
-                            <Stack.Screen name="Home"               component={Home} options={{headerShown: false}}/>
-                            <Stack.Screen name="Profile"            component={Profile} options={{headerShown: false}}/>
-                            <Stack.Screen name="Journal"            component={Journal} options={{headerShown: false}}/>
-                            <Stack.Screen name="Califications"      component={Califications} options={{headerShown: false}}/>
-                            <Stack.Screen name="Settings"           component={Settings} options={{headerShown: false}}/>
+                            <Stack.Screen name="Home"               component={Home}            options={{headerShown: false}}/>
+                            <Stack.Screen name="Profile"            component={Profile}         options={{headerShown: false}}/>
+                            <Stack.Screen name="Journal"            component={Journal}         options={{headerShown: false}}/>
+                            <Stack.Screen name="Califications"      component={Califications}   options={{headerShown: false}}/>
+                            <Stack.Screen name="Settings"           component={Settings}        options={{headerShown: false}}/>
                     </Stack.Navigator>
                 </NavigationContainer>
         </ThemeContext.Provider>  

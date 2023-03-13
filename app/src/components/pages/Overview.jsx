@@ -1,13 +1,12 @@
-import { View, ScrollView, Image, TouchableOpacity } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 import Task from "../other/Task";
 import theme from "../../data/theme.json"
-import { Subtitle, Whitespace, Paragraph, ProgressBar } from "../other/Components";
+import { Subtitle, Whitespace, Paragraph } from "../other/Components";
 import { ThemeContext } from "../UserContext";
 import Cache from "../../data/cache.json"
 import { useContext } from "react";
 import { icons } from "../../data/icons"
-export default function Overview (props) {
-
+export default function Overview () {
     const [colorTheme,setTheme] = useContext(ThemeContext)
 
     let date = new Date()
@@ -23,44 +22,28 @@ export default function Overview (props) {
                     if(task.repeat.includes(date.getDay())){
                         todayTasks.push(task)
                     }})
-    
 
     let progress = 100 * completedTasks / (todayTasks.length + 1)
 
     return(
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <View>
 
-            <View style={{display: (props.active == 0 ? "flex" : "none")  , marginTop: 30, padding: 5} }>
+            <View style={{ marginTop: 30, padding: 5} }>
 
-                <Subtitle text="Progreso diario" />
-
-                <Whitespace />
-
-                <View style={{flexDirection: "row", justifyContent: "space-around", alignItems: "baseline"}}>
-
-                    <ProgressBar progress={progress}/>
-
-                    <Paragraph text={progress + "%"}/>
-
-                </View>
+                <Subtitle text={"Tus objetivos"}/>
 
                 <Whitespace />
 
                 <Paragraph text={"Has completado "+ completedTasks +" de los " + (todayTasks.length + 1)  + " objetivos establecidos para hoy."}/>
 
-                <Whitespace />
-
-                <Subtitle text={"Tus objetivos"}/>
-
-                <Whitespace />
+                <Whitespace h={30}/>
                 {
-                    // Añadir todas las tareas cuyo día coincida con el de hoy
                     todayTasks.map(task => (
                         <Task title={task.title} icon={task.icon} description={task.description} id={Cache.tasks.indexOf(task)}/>
                     ))
                 }
 
-                <TouchableOpacity onPress={() => {setTheme("dark")}} style={{width: "100%", minHeight: 60, backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
+                <TouchableOpacity onPress={() => {setTheme((colorTheme == "dark"? "light" : "dark"))}} style={{width: "100%", minHeight: 60, backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
                     
                         <View style={{flexDirection: "row", alignItems: "center"}}>
 
@@ -80,8 +63,16 @@ export default function Overview (props) {
 
                 </TouchableOpacity>
 
-                <Whitespace h={500}/>
+                <Whitespace/>
+
+                <Subtitle text="Racha de objetivos" />
+
+                <Whitespace />
+
+                <Paragraph text={"¡Enhorabuena! Llevas una racha de 7 días. Fallaste por última vez el 4/3/2023"}/>
+
+                <Whitespace h={100}/>
             </View>
-        </ScrollView>
+        </View>
     )
 }

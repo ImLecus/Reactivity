@@ -2,10 +2,7 @@ import React from 'react';
 import * as Font from "expo-font";
 import { View } from 'react-native';
 
-import PageManager from './src/components/extras/PageManager';
-
-import * as Theme from "./src/data/theme"
-import {theme} from "./src/data/theme"
+import PageManager from './src/components/other/PageManager';
 
 
 export default function App() {

@@ -12,19 +12,15 @@
     "tasks":[
         {
             "title":"Camina 2km",
-            "icon":"walk",
-            "description":"Hoy toca hacer piernas.",
             "repeat":[0,1,2,3,4,5,6],
             "completed":"5/3/2023"
         },
         {
             "title":"Pasar tiempo con la familia",
-            "icon":"time",
             "repeat" : [0,1,2,3,4,5,6]
         },
         {
             "title":"Anota tu estado de ánimo",
-            "icon":"mood",
             "repeat":[0,2,4,6]
         }
 
