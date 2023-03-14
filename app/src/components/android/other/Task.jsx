@@ -1,8 +1,8 @@
 import { View, TouchableOpacity, Image } from "react-native";
-import theme from "../../data/theme.json"
+import theme from "../../../data/theme.json"
 import { Paragraph } from "./Components";
 import { useContext, useState } from "react"
-import { ThemeContext } from "../UserContext";
+import { ThemeContext } from "../../UserContext";
 import { style } from "../stylesheet";
 export default function Task ({title}) {
     const colorTheme = useContext(ThemeContext)[0]
@@ -18,7 +18,7 @@ export default function Task ({title}) {
                         backgroundColor: (completed? theme[colorTheme].mood.excellent :theme[colorTheme].transparent),
                         elevation : completed?3:0
                         }]} >
-                            <Image source={require("../../assets/img/done.png")} style={{
+                            <Image source={require("../../../assets/img/done.png")} style={{
                                 tintColor: ( colorTheme == "dark"? theme[colorTheme].text:theme[colorTheme].bg), 
                                 width: 25, height: 25,
                                 opacity: (completed? 1:0)

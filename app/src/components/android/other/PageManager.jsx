@@ -6,10 +6,10 @@ import Journal from "../pages/Journal"
 import Califications from "../pages/Califications";
 import Settings from "../pages/Settings";
 
-import { ThemeContext } from "../UserContext";
-import theme from "../../data/theme.json";
+import { ThemeContext } from "../../UserContext";
+import theme from "../../../data/theme.json";
 
-import Cache from "../../data/cache.json"
+import Cache from "../../../data/cache.json"
 
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';

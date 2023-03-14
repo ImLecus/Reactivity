@@ -1,7 +1,7 @@
 import { View, Image } from "react-native";
 import { Paragraph, Line, Whitespace } from "./Components";
-import { theme } from "../../data/theme";
-import { icons } from "../../data/icons"
+import { theme } from "../../../data/theme";
+import { icons } from "../../../data/icons"
 export default function Note({date,mood,message}){
     return(
         <View style={{marginBottom: 30}}>

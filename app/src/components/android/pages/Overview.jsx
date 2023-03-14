@@ -1,12 +1,15 @@
 import { View, Image, TouchableOpacity } from "react-native";
 import Task from "../other/Task";
-import theme from "../../data/theme.json"
+import theme from "../../../data/theme.json"
 import { Subtitle, Whitespace, Paragraph, ProgressBar } from "../other/Components";
-import { ThemeContext } from "../UserContext";
-import Cache from "../../data/cache.json"
+import { ThemeContext } from "../../UserContext";
+import Cache from "../../../data/cache.json"
 import { useContext } from "react";
-import { icons } from "../../data/icons"
+import { icons } from "../../../data/icons"
 import Streak from "../other/Streak"
+
+import * as FileSystem from 'expo-file-system';
+
 export default function Overview () {
     const [colorTheme,setTheme] = useContext(ThemeContext)
 
@@ -16,6 +19,7 @@ export default function Overview () {
                         todayTasks.push(task)
                     }})
     let progress = 20
+
 
     return(
         <View>
@@ -39,7 +43,7 @@ export default function Overview () {
                         <Task title={task.title} icon={task.icon} description={task.description} id={Cache.tasks.indexOf(task)}/>
                     ))
                 }
-                <TouchableOpacity onPress={() => {setTheme((colorTheme == "dark"? "light" : "dark"))}} style={{width: "100%", minHeight: 60, backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
+                <TouchableOpacity onPress={() => {}} style={{width: "100%", minHeight: 60, backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
                     
                         <View style={{flexDirection: "row", alignItems: "center"}}>
 
@@ -75,7 +79,9 @@ export default function Overview () {
                     <Streak day={19}/>
                     <Streak day={20}/>
                 </View>
-                
+                <Paragraph text={FileSystem.documentDirectory}/>
+                    
+            
 
                 <Whitespace h={100}/>
             </View>

@@ -1,10 +1,10 @@
 import { View, Image, StyleSheet, TouchableOpacity, Text} from "react-native"
 import {Title, Paragraph, Whitespace} from "../other/Components"
-import Cache from "../../data/cache.json"
-import theme from "../../data/theme.json"
+import Cache from "../../../data/cache.json"
+import theme from "../../../data/theme.json"
 import { style } from "../stylesheet"
 import { useContext } from "react"
-import { ThemeContext } from "../UserContext"
+import { ThemeContext } from "../../UserContext"
 import ReturnHeader from "../other/ReturnHeader"
 
 
@@ -43,7 +43,7 @@ export default function Profile({navigation}){
 
         <View style={{padding: 30, marginTop: 70, alignItems: "center"}}>
 
-            <Image source={require("../../assets/img/me.jpg")} style={{borderRadius: 100, width: 150, height: 150, marginBottom: 30}}/>
+            <Image source={require("../../../assets/img/me.jpg")} style={{borderRadius: 100, width: 150, height: 150, marginBottom: 30}}/>
 
             <Title text={Cache.user.username}/>
 
@@ -59,16 +59,16 @@ export default function Profile({navigation}){
 
             <TouchableOpacity style={styles.listItem}>
 
-                <Image source={require("../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
+                <Image source={require("../../../assets/img/premium.png")} style={[styles.image,styles.premium]}/>
 
                 <Paragraph text="Premium" color={theme[colorTheme].main}/>
 
             </TouchableOpacity>
 
 
-            <Button img={require("../../assets/img/settings.png")} styles={[styles.image,styles.nopremium]} text="Configuración" listItem={styles.listItem} onpress={() => {navigation.navigate("Settings")}}/>
-            <Button img={require("../../assets/img/star.png")} styles={[styles.image,styles.nopremium]} text="Logros" listItem={styles.listItem}/>
-            <Button img={require("../../assets/img/logout.png")} styles={[styles.image,styles.nopremium]} text="Cerrar sesión" listItem={styles.listItem}/>
+            <Button img={require("../../../assets/img/settings.png")} styles={[styles.image,styles.nopremium]} text="Configuración" listItem={styles.listItem} onpress={() => {navigation.navigate("Settings")}}/>
+            <Button img={require("../../../assets/img/star.png")} styles={[styles.image,styles.nopremium]} text="Logros" listItem={styles.listItem}/>
+            <Button img={require("../../../assets/img/logout.png")} styles={[styles.image,styles.nopremium]} text="Cerrar sesión" listItem={styles.listItem}/>
 
         </View>
     </>

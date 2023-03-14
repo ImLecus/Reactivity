@@ -1,8 +1,10 @@
 import { ScrollView} from "react-native"
-import Cache from "../../data/cache.json"
+import Cache from "../../../data/cache.json"
 import Header from "../other/Header"
 import Overview from "./Overview"
 import { Title, Paragraph, Whitespace } from "../other/Components"
+
+
 export default function Home({navigation}){
     return(
     <>

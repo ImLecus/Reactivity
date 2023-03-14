@@ -1,8 +1,8 @@
 import { View } from "react-native"
 import {Paragraph} from "./Components"
-import theme from "../../data/theme.json"
+import theme from "../../../data/theme.json"
 import { useContext } from "react"
-import { ThemeContext } from "../UserContext"
+import { ThemeContext } from "../../UserContext"
 export default function Calification({note, category, date}){
     const colorTheme = useContext(ThemeContext)[0]
     let color = note >= 8 ? "excellent" :

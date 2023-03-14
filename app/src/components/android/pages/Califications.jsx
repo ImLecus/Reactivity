@@ -1,13 +1,13 @@
 import { ScrollView, TouchableOpacity, Image } from "react-native"
-import Cache from "../../data/cache.json"
+import Cache from "../../../data/cache.json"
 import Header from "../other/Header"
 import Calification from "../other/Calification"
-import { icons } from "../../data/icons"
+import { icons } from "../../../data/icons"
 import { Paragraph, Line } from "../other/Components"
 import FrontPage from "../other/FrontPage"
 import { useState, useContext } from "react"
-import { ThemeContext } from "../UserContext"
-import theme from "../../data/theme.json"
+import { ThemeContext } from "../../UserContext"
+import theme from "../../../data/theme.json"
 export default function Califications({navigation}){
     const colorTheme = useContext(ThemeContext)[0]
     const [open,setOpen] = useState(false)

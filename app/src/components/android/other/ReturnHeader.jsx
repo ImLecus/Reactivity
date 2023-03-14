@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { View, Image, Text, TouchableOpacity } from "react-native";
-import theme from "../../data/theme.json"
+import theme from "../../../data/theme.json"
 import { style } from "../stylesheet";
-import { ThemeContext } from "../UserContext";
+import { ThemeContext } from "../../UserContext";
 
 export default function ReturnHeader({title,navigation,returnTo}){
 
@@ -15,7 +15,7 @@ export default function ReturnHeader({title,navigation,returnTo}){
 
                 <TouchableOpacity onPress={()=>navigation.navigate(returnTo)}>
 
-                    <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor:theme[colorTheme].text}}/>
+                    <Image source={require("../../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor:theme[colorTheme].text}}/>
                 
                 </TouchableOpacity>
 
@@ -23,7 +23,7 @@ export default function ReturnHeader({title,navigation,returnTo}){
 
                 <TouchableOpacity style={{opacity: 0}}>
 
-                    <Image source={require("../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor:theme[colorTheme].text}}/>
+                    <Image source={require("../../../assets/img/arrow_left.png")} style={{width: 35, height: 35, tintColor:theme[colorTheme].text}}/>
                 
                 </TouchableOpacity>
 
