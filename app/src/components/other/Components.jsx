@@ -21,7 +21,7 @@ export const Subtitle = ({text, color, opacity}) => {
     return(
         <Text style={[ style.subtitle , {
             color: color ? color : theme[colorTheme].text,
-            opacity: opacity ? opacity : 0.7 }]}>
+            opacity: opacity ? opacity : 0.8 }]}>
             {text}
         </Text>
     )
@@ -60,8 +60,8 @@ export const ProgressBar =  ({width, color, progress}) => {
         <View style={{
                 width:  width ? width :  "70%",
                 borderRadius: 10, 
-                height: 15, 
-                backgroundColor: theme[colorTheme].lightColors.main,
+                height: 10, 
+                backgroundColor: theme[colorTheme].lightColors.green,
                 marginTop: 10
             }}>
             <View style={{

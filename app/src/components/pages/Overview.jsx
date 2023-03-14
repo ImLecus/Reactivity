@@ -1,7 +1,7 @@
 import { View, Image, TouchableOpacity } from "react-native";
 import Task from "../other/Task";
 import theme from "../../data/theme.json"
-import { Subtitle, Whitespace, Paragraph } from "../other/Components";
+import { Subtitle, Whitespace, Paragraph, ProgressBar } from "../other/Components";
 import { ThemeContext } from "../UserContext";
 import Cache from "../../data/cache.json"
 import { useContext } from "react";
@@ -15,6 +15,7 @@ export default function Overview () {
                     if(task.repeat.includes(new Date().getDay())){
                         todayTasks.push(task)
                     }})
+    let progress = 20
 
     return(
         <View>
@@ -24,7 +25,12 @@ export default function Overview () {
                 <Subtitle text={"Tus objetivos"}/>
 
                 <Whitespace />
-
+                <View style={{flexDirection: "row", justifyContent:"space-between"}}>
+                    <ProgressBar width={"80%"} progress={progress} color={theme[colorTheme].mood.excellent}/>
+                    <Paragraph text={progress + "%"}/>
+                </View>
+                
+                <Whitespace />
                 <Paragraph text={"Has completado 0 de los " + (todayTasks.length + 1)  + " objetivos establecidos para hoy."}/>
 
                 <Whitespace h={30}/>
@@ -33,7 +39,6 @@ export default function Overview () {
                         <Task title={task.title} icon={task.icon} description={task.description} id={Cache.tasks.indexOf(task)}/>
                     ))
                 }
-
                 <TouchableOpacity onPress={() => {setTheme((colorTheme == "dark"? "light" : "dark"))}} style={{width: "100%", minHeight: 60, backgroundColor: (colorTheme == "dark" ? theme[colorTheme].complementary + "30": theme.transparent), borderRadius: 10, padding: 10, marginBottom: 10, borderWidth: (colorTheme == "light"? 1: 0), borderColor: theme[colorTheme].text + "44"}}>
                     
                         <View style={{flexDirection: "row", alignItems: "center"}}>
@@ -53,7 +58,6 @@ export default function Overview () {
                         </View>
 
                 </TouchableOpacity>
-
                 <Whitespace/>
 
                 <Subtitle text="Racha de objetivos" />
