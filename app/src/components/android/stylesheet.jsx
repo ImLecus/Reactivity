@@ -47,8 +47,7 @@ export const style = StyleSheet.create({
         alignItems: "center"
     },
     task: {
-        width: "100%", 
-        minHeight: 50, 
+        width: "100%",  
         elevation:2,
         borderRadius: 10, 
         padding: 10, 
@@ -72,5 +71,14 @@ export const style = StyleSheet.create({
         padding: 5,
         borderBottomWidth: 1,
         width: "80%"
+    },
+    calification : {
+        elevation: 1, 
+        marginBottom: 20 , 
+        width: 60, 
+        height: 60, 
+        borderRadius: 50,
+        justifyContent: "center", 
+        alignItems: "center"
     }
 })

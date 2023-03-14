@@ -1,12 +1,11 @@
 import { View, Image, TouchableOpacity, Modal, TouchableWithoutFeedback, TextInput } from "react-native";
 import Task from "../other/Task";
 import theme from "../../../data/theme.json"
-import { Subtitle, Whitespace, Paragraph, ProgressBar, Checkbox, Button } from "../other/Components";
+import { Subtitle, Whitespace, Paragraph, ProgressBar, Checkbox, Button , Streak} from "../other/Components";
 import { ThemeContext } from "../../UserContext";
 import Cache from "../../../data/cache.json"
 import { useContext, useState } from "react";
 import { icons } from "../../../data/icons"
-import Streak from "../other/Streak"
 
 import * as FileSystem from 'expo-file-system';
 import { style } from "../stylesheet";

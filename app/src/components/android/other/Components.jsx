@@ -4,24 +4,24 @@ import { ThemeContext } from "../../UserContext";
 import { style } from "../stylesheet"
 import { useContext, useState } from "react";
 
-export const Paragraph = ({text, color, opacity, bold}) => {
+export const Paragraph = ({text, color, opacity = 0.7, bold}) => {
     const colorTheme = useContext(ThemeContext)[0]
     return(
         <Text style={[style.p, {
             color: color ? color : theme[colorTheme].text,
-            opacity: opacity ? opacity : 0.7,
+            opacity: opacity,
             fontWeight: bold? "bold" : "normal" 
         }]}>
             {text}
         </Text>
     )
 }
-export const Subtitle = ({text, color, opacity}) => {
+export const Subtitle = ({text, color, opacity=0.8}) => {
     const colorTheme = useContext(ThemeContext)[0]
     return(
         <Text style={[ style.subtitle , {
             color: color ? color : theme[colorTheme].text,
-            opacity: opacity ? opacity : 0.8 }]}>
+            opacity: opacity}]}>
             {text}
         </Text>
     )
@@ -34,8 +34,8 @@ export const Title = ({text}) => {
         </Text>
     )
 }
-export const Whitespace = ({h}) => (
-    <View style={{width: 20, height: (h? h : 20)}}/>
+export const Whitespace = ({h=20}) => (
+    <View style={{width: 20, height: h}}/>
 )
 export const Button = ({action, text}) => {
     const colorTheme = useContext(ThemeContext)[0]
@@ -47,18 +47,18 @@ export const Button = ({action, text}) => {
     </TouchableOpacity>
     )
 }
-export const Line = ({w, opacity}) => {
+export const Line = ({w = 20, opacity = 0.4}) => {
     const colorTheme = useContext(ThemeContext)[0]
     return(
-        <View style={{height: 1, width: w? w : 20, backgroundColor: theme[colorTheme].text, opacity: opacity? opacity: 0.4}}/>
+        <View style={{height: 1, width: w, backgroundColor: theme[colorTheme].text, opacity: opacity}}/>
     )
    
 }
-export const ProgressBar =  ({width, color, progress}) => {
+export const ProgressBar =  ({width = "70%", color, progress}) => {
     const colorTheme = useContext(ThemeContext)[0]
     return(
         <View style={{
-                width:  width ? width :  "70%",
+                width:  width,
                 borderRadius: 10, 
                 height: 10, 
                 backgroundColor: theme[colorTheme].lightColors.green,
@@ -86,5 +86,32 @@ export const Checkbox = ({initialValue = false}) => {
                 <Image source={require("../../../assets/img/done.png")} style={{tintColor: ( colorTheme == "dark"? theme[colorTheme].text:theme[colorTheme].bg), width: 25, height: 25, opacity: (completed? 1:0)}}/>
             </View>
         </TouchableOpacity>
+    )
+}
+export const Streak = ({day}) => {
+    const colorTheme = useContext(ThemeContext)[0]
+    return(
+        <View style={{width: 50, height: 50, backgroundColor: theme[colorTheme].green , justifyContent: "center", alignItems: "center", margin: 5, borderRadius: 20}}>
+            <Subtitle text={day} opacity={1} color={theme[colorTheme].bg}/>
+        </View>
+    )
+}
+export const Calification = ({note, category, date}) => {
+    const colorTheme = useContext(ThemeContext)[0]
+    let color = note >= 8 ? "excellent" :
+            note >= 6 ? "good" :
+            note >= 4 ? "mid" :
+            note >= 2 ? "bad" :
+            "awful"
+    return(
+        <View style={{flexDirection: "row"}}>
+            <View style={[style.calification,{backgroundColor: theme[colorTheme].mood[color]}]}>
+                <Paragraph text={note} color={theme[colorTheme].bg} opacity={1}/>
+            </View>
+            <View style={{marginLeft: 20, marginTop: 5}}>
+                <Paragraph text={category} opacity={1}/>
+                <Paragraph text={date}/>
+            </View>
+        </View>
     )
 }
