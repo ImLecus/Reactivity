@@ -1,8 +1,8 @@
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity, Image, TouchableHighlight } from "react-native";
 import theme from "../../../data/theme.json"
 import { ThemeContext } from "../../UserContext";
 import { style } from "../stylesheet"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 export const Paragraph = ({text, color, opacity, bold}) => {
     const colorTheme = useContext(ThemeContext)[0]
@@ -37,12 +37,12 @@ export const Title = ({text}) => {
 export const Whitespace = ({h}) => (
     <View style={{width: 20, height: (h? h : 20)}}/>
 )
-export const Button = ({action, active, text, page}) => {
+export const Button = ({action, text}) => {
     const colorTheme = useContext(ThemeContext)[0]
     return(
     <TouchableOpacity onPress={action}>
-        <View style={[style.button,{backgroundColor: active == page ? theme[colorTheme].main : "#00000000"}]}>
-            <Text style={{color : theme[colorTheme].text, fontWeight: "bold" }}>{text}</Text>
+        <View style={[style.button,{backgroundColor : theme[colorTheme].green}]}>
+            <Paragraph text={text} color={theme[colorTheme].bg} bold opacity={1}/>
         </View>
     </TouchableOpacity>
     )
@@ -71,5 +71,20 @@ export const ProgressBar =  ({width, color, progress}) => {
                 }}>
             </View>
         </View>
+    )
+}
+export const Checkbox = ({initialValue = false}) => {
+    const [completed,setComplete] = useState(initialValue)
+    const colorTheme = useContext(ThemeContext)[0]
+    return(
+        <TouchableOpacity onPress={()=>{setComplete(!completed)}}>
+            <View style={[style.checkbox, {
+                        borderColor: completed ? theme[colorTheme].transparent :theme[colorTheme].text + "33", 
+                        backgroundColor: (completed? theme[colorTheme].mood.excellent :theme[colorTheme].transparent),
+                        elevation : completed?3:0
+                        }]} >
+                <Image source={require("../../../assets/img/done.png")} style={{tintColor: ( colorTheme == "dark"? theme[colorTheme].text:theme[colorTheme].bg), width: 25, height: 25, opacity: (completed? 1:0)}}/>
+            </View>
+        </TouchableOpacity>
     )
 }

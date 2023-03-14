@@ -17,11 +17,12 @@ export const style = StyleSheet.create({
     },
     button : {
         padding :5,
-        borderRadius: 20,
+        borderRadius: 5,
         paddingLeft: 20, 
         paddingRight: 20,
         margin: 5, 
-        marginBottom: 15
+        marginBottom: 15,
+        elevation: 3
     },
     header : {
         width: "100%",
@@ -40,7 +41,6 @@ export const style = StyleSheet.create({
     checkbox : {
         width: 25,
         height: 25,
-        marginRight: 20,
         borderRadius: 8,
         borderWidth: 1,
         justifyContent: "center",
@@ -53,5 +53,24 @@ export const style = StyleSheet.create({
         borderRadius: 10, 
         padding: 10, 
         marginBottom: 10
+    },
+    modal : {
+        position: "absolute",
+        width: "80%",
+        left: "10%",
+        bottom:"25%",
+        borderRadius: 10,
+        padding: 20,
+        alignItems: "center"
+    },
+    modalbg: {
+        width: "100%",
+        height: "100%",
+        opacity: 0.2
+    },
+    input : {
+        padding: 5,
+        borderBottomWidth: 1,
+        width: "80%"
     }
 })
